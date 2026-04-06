@@ -1,139 +1,138 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ArrowRight, Briefcase, Code, Users, Calculator, Scale, Heart, Shield, Search, GraduationCap } from "lucide-react";
+import { ArrowLeft, ArrowRight, Briefcase, Code, Users, Scale, Shield, Search, GraduationCap, Brain, Globe } from "lucide-react";
 import aeroLogoBlue from "@/assets/aero_logo_blue.png";
-import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
 
 const positions = [
   {
-    id: "software-development",
-    title: "Software Development",
-    icon: Code,
-    description: "Build the technology that powers global tax transparency",
-    details: "Join our engineering team to develop cutting-edge solutions for cross-border tax compliance. Work with modern technologies including React, TypeScript, and Node.js. Help create secure, scalable platforms that serve globally mobile professionals worldwide.",
+    id: "ai-governance-advisor",
+    title: "AI Governance Advisor",
+    icon: Brain,
+    description: "Help enterprises design and implement responsible AI governance frameworks",
+    details: "Join our advisory team to lead client engagements across AI risk assessment, regulatory alignment, and governance framework design. Work with organizations navigating the EU AI Act, ISO/IEC 42001, and GDPR obligations.",
     responsibilities: [
-      "Develop and maintain web applications using React and TypeScript",
-      "Build secure API endpoints and database systems",
-      "Implement smart document processing features",
-      "Ensure platform security and data protection compliance",
-      "Collaborate with product and design teams"
-    ]
+      "Lead AI risk assessment engagements for enterprise clients",
+      "Design AI governance policies aligned to EU AI Act and ISO 42001",
+      "Conduct AI system audits and control gap analyses",
+      "Support clients in building internal AI oversight capabilities",
+      "Author advisory reports and governance documentation",
+    ],
+  },
+  {
+    id: "regulatory-affairs",
+    title: "AI Regulatory Affairs Specialist",
+    icon: Scale,
+    description: "Navigate the evolving landscape of AI regulation across jurisdictions",
+    details: "Track, analyze, and apply developments in AI legislation globally. Support client engagements requiring deep regulatory expertise, including EU AI Act conformity assessments, GDPR AI-related obligations, and emerging national AI laws.",
+    responsibilities: [
+      "Monitor AI regulatory developments across EU, UK, US, and APAC",
+      "Draft regulatory analysis and compliance guidance for clients",
+      "Support conformity assessment preparation for high-risk AI systems",
+      "Present at client workshops and industry events",
+      "Contribute to AERO's published policy positions and whitepapers",
+    ],
   },
   {
     id: "government-relations",
     title: "Government Relations",
     icon: Users,
-    description: "Bridge the gap between citizens and tax authorities",
-    details: "Work with government agencies and international organizations to build partnerships that advance tax transparency. Represent AERO Cooperation in diplomatic settings and help shape policy discussions around cross-border tax compliance.",
+    description: "Build partnerships with public sector agencies on AI governance",
+    details: "Develop and maintain AERO's relationships with government ministries, regulatory bodies, and international organizations. Represent AERO in policy forums and help public sector clients navigate AI governance obligations.",
     responsibilities: [
-      "Develop relationships with tax authorities globally",
-      "Represent AERO at international forums and conferences",
-      "Draft policy recommendations and white papers",
-      "Navigate regulatory requirements across jurisdictions",
-      "Support government partnership initiatives"
-    ]
+      "Develop relationships with government AI policy teams",
+      "Represent AERO at international AI governance forums",
+      "Draft policy recommendations and position papers",
+      "Support public sector procurement AI governance frameworks",
+      "Navigate agency-specific regulatory and oversight requirements",
+    ],
   },
   {
-    id: "customer-engagement",
-    title: "Customer Engagement",
-    icon: Heart,
-    description: "Support our global community of users",
-    details: "Be the voice of AERO Cooperation for our worldwide user base. Help globally mobile professionals navigate the platform and achieve tax compliance with confidence. Create educational content and build community.",
+    id: "executive-education",
+    title: "Executive Education Lead",
+    icon: GraduationCap,
+    description: "Develop and deliver AI governance training for leadership teams",
+    details: "Design and facilitate AI governance workshops, briefings, and training programs for C-suite and board-level audiences. Translate complex regulatory and technical concepts into actionable executive guidance.",
     responsibilities: [
-      "Provide excellent customer support across channels",
-      "Create user guides and educational content",
-      "Gather and analyze user feedback",
-      "Build and nurture user community",
-      "Conduct user onboarding and training"
-    ]
+      "Design AI governance curriculum for executive audiences",
+      "Facilitate workshops and board briefings on AI risk",
+      "Develop training materials and case study content",
+      "Assess organizational AI literacy and training needs",
+      "Customize programs for specific sectors and jurisdictions",
+    ],
   },
   {
-    id: "accounting",
-    title: "Accounting",
-    icon: Calculator,
-    description: "Ensure accuracy in tax calculations and guidance",
-    details: "Apply your accounting expertise to validate our tax calculation engine and ensure accuracy across jurisdictions. Work with international tax specialists to keep our rules database current and comprehensive.",
+    id: "security-ai-risk",
+    title: "AI Security & Risk Specialist",
+    icon: Shield,
+    description: "Assess AI system security risks and adversarial vulnerabilities",
+    details: "Apply cybersecurity expertise to AI-specific risk assessment, including adversarial robustness, data integrity threats, model supply chain risks, and AI system security architecture review.",
     responsibilities: [
-      "Validate tax calculations and form generation",
-      "Research tax rules for new jurisdictions",
-      "Maintain tax reference database accuracy",
-      "Review system-generated tax guidance",
-      "Support audit and compliance processes"
-    ]
+      "Conduct AI system security risk assessments for clients",
+      "Review AI vendor security practices and contracts",
+      "Develop AI incident response planning documentation",
+      "Assess adversarial attack surfaces for deployed AI systems",
+      "Align security controls with ISO 42001 and NIST AI RMF",
+    ],
+  },
+  {
+    id: "research",
+    title: "AI Governance Research Analyst",
+    icon: Search,
+    description: "Advance AERO's thought leadership in AI governance",
+    details: "Conduct research on AI governance best practices, regulatory trends, and sector-specific compliance challenges. Publish findings to support client work and position AERO as a leading voice in responsible AI.",
+    responsibilities: [
+      "Research AI governance frameworks and regulatory developments",
+      "Analyze sector-specific AI governance challenges",
+      "Author whitepapers, reports, and policy briefs",
+      "Support advisory engagements with evidence-based insights",
+      "Present at conferences and academic forums",
+    ],
   },
   {
     id: "legal",
-    title: "Legal",
-    icon: Scale,
-    description: "Navigate the complex landscape of international law",
-    details: "Provide legal expertise across multiple jurisdictions to ensure AERO operates within regulatory frameworks globally. Handle contracts, compliance, data protection, and intellectual property matters.",
+    title: "Legal Counsel",
+    icon: Globe,
+    description: "Navigate AI law, data protection, and advisory operations",
+    details: "Provide legal expertise across AI regulation, data protection law, and advisory firm operations. Support client engagements on AI Act obligations, contractual risk allocation, and data governance legal frameworks.",
     responsibilities: [
-      "Advise on international regulatory compliance",
-      "Draft and review contracts and agreements",
-      "Ensure GDPR and data protection compliance",
-      "Support government partnership negotiations",
-      "Manage intellectual property matters"
-    ]
+      "Advise on EU AI Act, GDPR, and AI liability frameworks",
+      "Draft and review client advisory agreements and deliverables",
+      "Support AI contract review and vendor assessment work",
+      "Maintain AERO's internal compliance posture",
+      "Advise on data protection obligations across jurisdictions",
+    ],
   },
   {
-    id: "hr",
-    title: "HR",
-    icon: Users,
-    description: "Build a world-class global team",
-    details: "Shape the culture and people practices of a truly global organization. Recruit talent from around the world and create an inclusive environment where diverse perspectives thrive.",
+    id: "technology",
+    title: "Technology & Tools",
+    icon: Code,
+    description: "Build internal tools and digital capabilities supporting our advisory work",
+    details: "Develop the internal platforms, workflow tools, and governance documentation systems that power AERO's client engagements. Work at the intersection of AI governance expertise and software development.",
     responsibilities: [
-      "Recruit and onboard global talent",
-      "Develop HR policies for international workforce",
-      "Manage compensation and benefits programs",
-      "Foster inclusive company culture",
-      "Support employee development and growth"
-    ]
+      "Build and maintain AERO's internal advisory workflow tools",
+      "Develop governance documentation and reporting systems",
+      "Automate regulatory monitoring and alert pipelines",
+      "Maintain secure client data handling infrastructure",
+      "Collaborate with advisors to translate process into tooling",
+    ],
   },
   {
     id: "interns",
     title: "Interns",
     icon: GraduationCap,
-    description: "Launch your career in global tax transparency",
-    details: "Gain hands-on experience in a mission-driven organization working at the intersection of technology, international relations, and finance. Learn from experienced professionals and contribute meaningfully to real projects.",
+    description: "Launch your career in AI governance and regulatory affairs",
+    details: "Gain hands-on experience in a mission-driven advisory firm working at the forefront of AI regulation and responsible AI deployment. Contribute to real client work and published research.",
     responsibilities: [
-      "Support various teams based on interests and skills",
-      "Conduct research and analysis projects",
-      "Participate in team meetings and planning",
-      "Receive mentorship from senior team members",
-      "Contribute to meaningful platform improvements"
-    ]
+      "Support advisory teams on client engagement research",
+      "Conduct regulatory monitoring and analysis",
+      "Contribute to whitepaper and report drafting",
+      "Participate in client workshops and team meetings",
+      "Receive mentorship from senior governance advisors",
+    ],
   },
-  {
-    id: "security",
-    title: "Security",
-    icon: Shield,
-    description: "Protect sensitive financial data worldwide",
-    details: "Ensure the security and integrity of user data across our global platform. Implement industry-leading security practices and maintain compliance with international data protection standards.",
-    responsibilities: [
-      "Implement and maintain security infrastructure",
-      "Conduct security audits and vulnerability assessments",
-      "Ensure compliance with security standards",
-      "Respond to security incidents",
-      "Train team on security best practices"
-    ]
-  },
-  {
-    id: "research",
-    title: "Research",
-    icon: Search,
-    description: "Advance the science of tax compliance",
-    details: "Conduct research on international tax systems, cross-border compliance patterns, and emerging trends in global mobility. Publish findings and contribute to the broader discourse on tax transparency.",
-    responsibilities: [
-      "Research international tax systems and treaties",
-      "Analyze cross-border compliance trends",
-      "Publish research papers and reports",
-      "Support product development with insights",
-      "Present at conferences and academic forums"
-    ]
-  }
 ];
 
 export default function Hiring() {
@@ -164,7 +163,7 @@ export default function Hiring() {
               Join Our Growing Team
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Help us build the future of global tax transparency. We're looking for passionate individuals who believe in making cross-border compliance accessible to everyone.
+              Help organizations govern AI responsibly. We are building a world-class advisory team at the intersection of AI regulation, enterprise risk, and responsible technology deployment.
             </p>
           </div>
 
@@ -193,7 +192,7 @@ export default function Hiring() {
           <Card className="p-8 bg-primary text-white text-center">
             <h3 className="text-2xl font-semibold mb-4">Ready to Make an Impact?</h3>
             <p className="text-white/80 max-w-2xl mx-auto mb-6">
-              We're building something meaningful: a platform that helps millions of globally mobile professionals navigate tax compliance with confidence. Join us in advancing global tax transparency.
+              We are building a team that helps the world's enterprises deploy AI responsibly. If you bring expertise in AI governance, regulatory affairs, or enterprise risk — we want to hear from you.
             </p>
             <p className="text-white/60 text-sm">
               Send your resume to <a href="mailto:careers@aerocooperation.com" className="text-white underline">careers@aerocooperation.com</a>

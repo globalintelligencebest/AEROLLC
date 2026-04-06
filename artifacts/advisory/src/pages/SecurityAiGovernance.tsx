@@ -25,14 +25,14 @@ const frameworks = [
     title: "ISO/IEC 42001 Alignment",
     badge: "AI Management System",
     description:
-      "AERO's AI governance framework is designed to align with ISO/IEC 42001, the international standard for Artificial Intelligence Management Systems (AIMS).",
+      "AERO's internal advisory practices are designed to align with ISO/IEC 42001, the international standard for Artificial Intelligence Management Systems (AIMS). This ensures our advisory work meets the same standards we recommend to clients.",
     points: [
-      "Structured AI risk assessment for tax guidance outputs",
-      "Human oversight mechanisms for all AI-generated recommendations",
-      "Continuous monitoring and improvement of AI model performance",
-      "Documented AI lifecycle management from development to deployment",
-      "Stakeholder communication and transparency protocols",
-      "Regular internal audits of AI system behavior and outputs",
+      "Structured AI risk assessment methodology for all advisory engagements",
+      "Human oversight protocols for all AI-assisted analysis outputs",
+      "Continuous monitoring and improvement of advisory AI tool performance",
+      "Documented AI lifecycle management from selection to retirement",
+      "Stakeholder communication and transparency requirements",
+      "Regular internal audits of AI-assisted advisory processes",
     ],
   },
   {
@@ -40,14 +40,14 @@ const frameworks = [
     title: "EU AI Act Compliance",
     badge: "Regulatory Alignment",
     description:
-      "As a provider of AI-assisted financial guidance, AERO proactively aligns with the EU Artificial Intelligence Act to ensure responsible deployment across jurisdictions.",
+      "As an advisor to organizations navigating the EU AI Act, AERO proactively maintains its own EU AI Act compliance posture. Our practices reflect the same standards we help our clients implement.",
     points: [
-      "Risk classification: Tax guidance AI categorized as limited-risk under Article 52",
-      "Transparency obligations: Users informed when interacting with AI-generated content",
-      "Human oversight (Article 14): All AI outputs subject to human review capability",
-      "Data governance (Article 10): Training data quality controls and bias monitoring",
-      "Technical documentation maintained for AI system capabilities and limitations",
-      "AI decision logging with confidence scores for auditability",
+      "AI system inventory maintained for all AI tools used in advisory delivery",
+      "Risk classification applied to each AI system under EU AI Act criteria",
+      "Transparency obligations: clients informed when AI-assisted analysis is used",
+      "Human oversight (Article 14): all AI-assisted outputs reviewed by qualified advisors",
+      "Data governance: training data quality and bias monitoring for AI tools",
+      "Technical documentation maintained for all AI systems in use",
     ],
   },
   {
@@ -55,14 +55,14 @@ const frameworks = [
     title: "GDPR Data Protection",
     badge: "Privacy by Design",
     description:
-      "AERO implements GDPR-compliant data protection practices as a foundational principle, ensuring user data sovereignty and privacy across all processing activities.",
+      "AERO implements GDPR-compliant data protection practices as a foundational principle, ensuring client data is handled with the highest standards of confidentiality, integrity, and security.",
     points: [
-      "Data minimization: Only essential personal data collected for tax calculations",
-      "Purpose limitation: Data processed solely for declared tax guidance purposes",
-      "Storage limitation: Password reset tokens expire within 1 hour, hashed with SHA-256",
-      "Right to erasure: Complete data deletion available through account settings",
-      "Data portability: Full data export in machine-readable format",
-      "Privacy by design: End-to-end encryption for document storage, ACL-enforced access",
+      "Data minimization: only data necessary for the advisory engagement is collected",
+      "Purpose limitation: client data processed solely for agreed advisory purposes",
+      "Storage limitation: engagement data retained per contractually agreed schedules",
+      "Right to erasure: complete client data deletion available upon request",
+      "Data portability: client deliverables and data provided in portable formats",
+      "Privacy by design: end-to-end encryption for all client document handling",
     ],
   },
 ];
@@ -70,46 +70,46 @@ const frameworks = [
 const securityControls = [
   {
     icon: KeyRound,
-    title: "Authentication Security",
+    title: "Access & Authentication",
     items: [
-      "OIDC-based authentication (Google, GitHub, Apple, email/password)",
-      "TOTP-based two-factor authentication with Google Authenticator",
-      "Backup codes for MFA account recovery",
-      "JWT tokens with session management and secure cookie policies",
-      "bcrypt password hashing with cost factor 12",
+      "Multi-factor authentication required for all AERO staff systems",
+      "Role-based access control for client engagement data",
+      "Privileged access reviews conducted quarterly",
+      "Zero-trust network access for remote advisory team",
+      "Credential vaulting with hardware security key support",
     ],
   },
   {
     icon: AlertTriangle,
-    title: "Threat Detection",
+    title: "Threat Detection & Monitoring",
     items: [
-      "Rate limiting: 10 login attempts per 15 minutes per IP",
-      "Failed login monitoring: Alert triggers after 5 failures in 10 minutes",
-      "Sensitive operations rate limited: 5 requests per hour",
-      "Global API rate limiting: 100 requests per minute",
-      "In-memory tracking with automatic cleanup of expired entries",
+      "Continuous security monitoring of advisory platforms and data stores",
+      "Anomaly detection for unusual data access patterns",
+      "Security incident response plan with defined escalation paths",
+      "Quarterly vulnerability assessments and penetration testing",
+      "Supplier and vendor security risk reviews",
     ],
   },
   {
     icon: Lock,
-    title: "Token & Session Security",
+    title: "Data Protection Controls",
     items: [
-      "Password reset tokens hashed with SHA-256 before database storage",
-      "Reset tokens single-use with 1-hour expiration",
-      "PostgreSQL-backed session storage with automatic expiry",
-      "Secure cookie attributes: HttpOnly, SameSite=Lax, Secure in production",
-      "SMTP connection verification on startup with diagnostic categorization",
+      "Encryption at rest and in transit for all client data",
+      "Secure document handling with access-controlled client portals",
+      "Client data segmentation to prevent cross-engagement exposure",
+      "Secure deletion procedures for engagement data at project close",
+      "DLP controls preventing unauthorized exfiltration of client information",
     ],
   },
   {
     icon: Database,
-    title: "Data Security",
+    title: "Data Governance",
     items: [
-      "PostgreSQL with row-level security considerations",
-      "Document vault with ACL policies ensuring owner-only access",
-      "Presigned URLs for secure direct uploads to cloud storage",
-      "Zod schema validation for all API inputs",
-      "Comprehensive audit trail for all sensitive operations",
+      "Client data classification policy (confidential, restricted, internal)",
+      "Data retention schedules aligned to contractual and legal obligations",
+      "Processing records maintained per GDPR Article 30",
+      "Third-party data processor agreements in place for all sub-processors",
+      "Annual data protection impact assessments for high-risk processing",
     ],
   },
 ];
@@ -140,8 +140,8 @@ export default function SecurityAiGovernance() {
             Trust, Transparency & Compliance
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed" data-testid="text-hero-description">
-            AERO is built with enterprise-grade security controls, regulatory-aligned AI governance,
-            and comprehensive audit capabilities designed for cross-border tax professionals.
+            AERO Advisory maintains enterprise-grade security controls, regulatory-aligned AI governance practices,
+            and comprehensive audit capabilities — holding ourselves to the same standards we help our clients achieve.
           </p>
         </div>
       </section>
@@ -151,8 +151,8 @@ export default function SecurityAiGovernance() {
           Regulatory Framework Alignment
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          AERO's compliance posture is designed around internationally recognized standards
-          and emerging AI regulations.
+          AERO's internal compliance posture is designed around the same internationally recognized standards
+          and AI regulations that govern our client work.
         </p>
 
         <div className="grid gap-8">
@@ -184,10 +184,10 @@ export default function SecurityAiGovernance() {
       <section id="security" className="bg-muted/30 dark:bg-muted/10 py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-4 text-center" data-testid="text-security-title">
-            Authentication & Security Controls
+            Security Controls
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Multi-layered security controls protect user accounts, data integrity, and platform operations.
+            Multi-layered controls protect client data, advisory platforms, and operational integrity across all AERO systems.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -216,7 +216,7 @@ export default function SecurityAiGovernance() {
           Audit Logging & Accountability
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Every security-relevant action is immutably logged for forensic analysis, compliance reporting, and incident response.
+          Every security-relevant action and AI-assisted advisory step is logged for forensic analysis, compliance reporting, and continuous improvement.
         </p>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -224,14 +224,14 @@ export default function SecurityAiGovernance() {
             <FileText className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-lg font-semibold mb-2">Logged Events</h3>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li>Successful and failed login attempts</li>
-              <li>User registrations</li>
-              <li>Password reset requests and completions</li>
-              <li>MFA setup and verification</li>
-              <li>Document access and uploads</li>
-              <li>Tax obligation calculations</li>
-              <li>Profile and data modifications</li>
-              <li>Admin actions (approvals, revocations)</li>
+              <li>Client data access and document operations</li>
+              <li>AI-assisted analysis invocations and outputs</li>
+              <li>Advisory deliverable generation and approvals</li>
+              <li>Staff authentication and privilege escalations</li>
+              <li>Data exports and client portal access</li>
+              <li>System configuration changes</li>
+              <li>Incident detection and response actions</li>
+              <li>Third-party access events</li>
             </ul>
           </Card>
 
@@ -243,9 +243,9 @@ export default function SecurityAiGovernance() {
               <li>User identifier (pseudonymized)</li>
               <li>Action type and entity reference</li>
               <li>IP address (for security investigation)</li>
-              <li>User agent (browser identification)</li>
-              <li>Contextual details (sanitized)</li>
-              <li>Rule references (for tax calculations)</li>
+              <li>Session context and device identifier</li>
+              <li>Contextual outcome details (sanitized)</li>
+              <li>AI model version and parameters used</li>
             </ul>
           </Card>
 
@@ -253,13 +253,13 @@ export default function SecurityAiGovernance() {
             <Shield className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-lg font-semibold mb-2">Privacy Safeguards</h3>
             <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li>Passwords never logged (pre-sanitized)</li>
-              <li>Tokens stripped before audit storage</li>
-              <li>MFA secrets excluded from logs</li>
-              <li>Email addresses logged only for auth events</li>
-              <li>IP addresses retained for security only</li>
-              <li>Audit data subject to retention policies</li>
-              <li>Access-controlled admin-only visibility</li>
+              <li>Credentials and secrets never logged</li>
+              <li>Client content excluded from system-level logs</li>
+              <li>Pseudonymization applied to identifiers</li>
+              <li>Logs subject to documented retention policies</li>
+              <li>Access to audit logs restricted and monitored</li>
+              <li>Log integrity protected against tampering</li>
+              <li>GDPR Article 30 processing records maintained</li>
             </ul>
           </Card>
         </div>
@@ -271,8 +271,8 @@ export default function SecurityAiGovernance() {
             AI Governance Principles
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Our AI systems operate under strict governance principles ensuring transparency,
-            fairness, and human oversight at every stage.
+            AERO's internal AI governance principles ensure every AI-assisted advisory output meets our standards
+            for transparency, accuracy, and human accountability.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -280,21 +280,20 @@ export default function SecurityAiGovernance() {
               <Brain className="h-8 w-8 text-primary mb-4" />
               <h3 className="text-lg font-semibold mb-2">Transparency & Explainability</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                Users are clearly informed when AI is involved in generating tax guidance,
-                document analysis, or scenario recommendations.
+                Clients are clearly informed when AI tools are used in advisory analysis, research synthesis, or documentation drafting. Every AI-assisted deliverable is reviewed and validated by a qualified AERO advisor before client delivery.
               </p>
               <ul className="space-y-1.5 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  AI-generated content clearly labeled
+                  AI-assisted analysis disclosed in advisory deliverables
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  Confidence scores attached to AI outputs
+                  Reasoning and evidence trails documented for recommendations
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  Decision rationale logged for all AI interactions
+                  AI tool version and configuration logged for all advisory outputs
                 </li>
               </ul>
             </Card>
@@ -303,21 +302,20 @@ export default function SecurityAiGovernance() {
               <ClipboardCheck className="h-8 w-8 text-primary mb-4" />
               <h3 className="text-lg font-semibold mb-2">Human Oversight & Control</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                AI systems operate under human supervision with mechanisms for override,
-                correction, and continuous improvement.
+                AI tools support but do not replace AERO's qualified advisors. All advisory recommendations, risk assessments, and governance frameworks are authored and reviewed by certified human experts before delivery.
               </p>
               <ul className="space-y-1.5 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  Deterministic rule engine for core tax calculations
+                  Qualified advisor review required for all client-facing outputs
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  AI used for supplementary guidance, not binding advice
+                  AI used for research and drafting support, not final judgments
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  Human review capability for all AI decisions
+                  Override and correction mechanisms in place for all AI-assisted processes
                 </li>
               </ul>
             </Card>
