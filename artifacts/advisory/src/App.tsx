@@ -3,7 +3,6 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useEffect, useState } from "react";
 import Governance from "@/pages/Governance";
 import Advisory from "@/pages/Advisory";
 import FinancingPage from "@/pages/FinancingPage";
@@ -14,30 +13,6 @@ import LeadershipPage from "@/pages/LeadershipPage";
 import Press from "@/pages/Press";
 import SecurityAiGovernance from "@/pages/SecurityAiGovernance";
 import AdminGovernance from "@/pages/AdminGovernance";
-
-function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<"light" | "dark">(() => {
-    try {
-      return (localStorage.getItem("aero-theme") as "light" | "dark") || "light";
-    } catch {
-      return "light";
-    }
-  });
-
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    try {
-      localStorage.setItem("aero-theme", theme);
-    } catch {
-    }
-  }, [theme]);
-
-  return <>{children}</>;
-}
 
 function NotFound() {
   return (
@@ -74,12 +49,10 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <ThemeProvider>
-          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-            <Router />
-          </WouterRouter>
-          <Toaster />
-        </ThemeProvider>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <Router />
+        </WouterRouter>
+        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );
