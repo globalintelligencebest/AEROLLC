@@ -52,7 +52,7 @@ export default function Governance() {
 
 
       {/* CONTROL ENVIRONMENT */}
-      <section id="controls" className="py-24 bg-slate-950">
+      <section id="why-it-matters" className="py-24 bg-slate-950">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-semibold mb-12 text-white">
             Why This Matters Now
