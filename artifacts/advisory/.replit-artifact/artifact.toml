@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "AERO Advisory"
+version = "1.0.0"
+id = "artifacts/advisory"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20377
+
+[services.development]
+run = "pnpm --filter @workspace/advisory run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/advisory", "run", "build" ]
+publicDir = "artifacts/advisory/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20377"
+BASE_PATH = "/"
