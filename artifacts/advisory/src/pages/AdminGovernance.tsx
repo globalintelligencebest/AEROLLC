@@ -10,6 +10,7 @@ import {
   Clock,
   RefreshCw,
 } from "lucide-react";
+import { GovernanceFooter } from "@/components/GovernanceFooter";
 
 interface GovernanceControl {
   id: string;
@@ -276,6 +277,7 @@ export default function AdminGovernance() {
           </div>
         </div>
       ))}
+      <GovernanceFooter />
     </div>
   );
 }
