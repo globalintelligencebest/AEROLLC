@@ -5,6 +5,7 @@ import { ArrowRight, Award, Users, Globe, Building2, Shield, Target, Heart, Scal
 import aeroLogoBlue from "@assets/aero_logo_blue.png";
 import aeroLogoWhite from "@assets/aero_logo_white.png";
 import { Link } from "wouter";
+import { GovernanceFooter } from "@/components/GovernanceFooter";
 
 export default function LeadershipPage() {
   return (
@@ -17,8 +18,8 @@ export default function LeadershipPage() {
           <div className="flex items-center gap-6">
             <Link href="/" className="text-sm font-medium text-foreground/70 hover:text-foreground hidden md:block">Home</Link>
             <Button asChild data-testid="button-get-started">
-              <a href="https://planetaxapp.com" target="_blank" rel="noopener noreferrer">
-                Try the App
+              <a href="mailto:contact@aerocooperation.com">
+                Get in Touch
               </a>
             </Button>
           </div>
@@ -184,8 +185,8 @@ export default function LeadershipPage() {
 
           <div className="text-center">
             <Button size="lg" className="h-12 px-8" asChild>
-              <a href="https://planetaxapp.com" target="_blank" rel="noopener noreferrer">
-                Get Started Free
+              <a href="mailto:contact@aerocooperation.com">
+                Contact Our Team
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -193,55 +194,7 @@ export default function LeadershipPage() {
         </div>
       </main>
 
-      <footer className="py-12 bg-[#1E2344] text-white" style={{ fontFamily: 'Calibri, sans-serif' }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <img src={aeroLogoWhite} alt="AERO Cooperation" className="h-16 mb-4" />
-              <p className="text-sm text-white/70">
-                Advancing global tax transparency through cooperation and technology.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><Link href="/leadership" className="hover:text-white transition-colors">Leadership</Link></li>
-                <li><Link href="/financing" className="hover:text-white transition-colors">Financing</Link></li>
-                <li><Link href="/press" className="hover:text-white transition-colors">Press</Link></li>
-                <li><Link href="/hiring" className="hover:text-white transition-colors">Hiring</Link></li>
-                <li><Link href="/government" className="hover:text-white transition-colors">Organisations</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="https://aerocooperation.com/faq" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Help Center/FAQ</a></li>
-                <li><a href="mailto:feedback@aerocooperation.com" className="hover:text-white transition-colors">Send Feedback</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <a href="mailto:contact@aerocooperation.com" className="text-white/70 hover:text-white transition-colors">
-                contact@aerocooperation.com
-              </a>
-            </div>
-          </div>
-
-          <div className="border-t border-white/20 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-sm text-white/50">
-                Not legal or tax advice. Consult qualified professionals for your specific situation.
-              </p>
-              <p className="text-sm text-white/50">
-                AERO Cooperation
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <GovernanceFooter />
     </div>
   );
 }

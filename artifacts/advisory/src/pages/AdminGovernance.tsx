@@ -1,11 +1,9 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest, queryClient } from "@/lib/queryClient";
 import {
-  Loader2,
   CheckCircle2,
   AlertCircle,
   Shield,
@@ -22,6 +20,99 @@ interface GovernanceControl {
   status: string;
   lastReviewedAt?: string | Date | null;
 }
+
+const MOCK_CONTROLS: GovernanceControl[] = [
+  {
+    id: "iso-1",
+    framework: "ISO42001",
+    controlName: "AI Risk Assessment Process",
+    description: "Structured assessment of AI system risks across the development lifecycle.",
+    technicalImplementation: "Quarterly risk reviews with documented scoring matrices. Risk register maintained in internal governance portal.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "iso-2",
+    framework: "ISO42001",
+    controlName: "Human Oversight Mechanism",
+    description: "All AI-generated recommendations subject to human review before action.",
+    technicalImplementation: "UI approval gates on all AI outputs. Audit trail logged per interaction. No autonomous AI-initiated actions permitted.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "iso-3",
+    framework: "ISO42001",
+    controlName: "AI Lifecycle Documentation",
+    description: "Documented AI system capabilities, limitations, and deployment context.",
+    technicalImplementation: "Model cards maintained for each AI component. Version-controlled documentation in internal wiki.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "eu-1",
+    framework: "EU_AI_ACT",
+    controlName: "Risk Classification Register",
+    description: "AI systems classified under EU AI Act risk tiers (unacceptable/high/limited/minimal).",
+    technicalImplementation: "Advisory AI categorized as limited-risk under Article 52. Transparency disclosures in place for all user-facing AI interactions.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "eu-2",
+    framework: "EU_AI_ACT",
+    controlName: "Transparency Obligation",
+    description: "Users informed when interacting with AI-generated content per Article 52.",
+    technicalImplementation: "In-UI disclosure labels on AI-generated advisory text. System messages identify AI involvement at session start.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "eu-3",
+    framework: "EU_AI_ACT",
+    controlName: "Technical Documentation",
+    description: "Maintained technical documentation for AI system capabilities and limitations.",
+    technicalImplementation: "Internal documentation covers model selection rationale, input/output specifications, known limitations, and bias testing results.",
+    status: "active",
+    lastReviewedAt: null,
+  },
+  {
+    id: "gdpr-1",
+    framework: "GDPR",
+    controlName: "Data Minimization",
+    description: "Only essential personal data collected for advisory service delivery.",
+    technicalImplementation: "Data schema reviewed quarterly. Fields not required for core service are excluded. Opt-in only for optional data collection.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "gdpr-2",
+    framework: "GDPR",
+    controlName: "Right to Erasure",
+    description: "Complete data deletion available through account settings and upon request.",
+    technicalImplementation: "Deletion workflow cascades across all data stores. Completion confirmed within 30 days. Deletion log retained for compliance audit.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 95 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "internal-1",
+    framework: "INTERNAL",
+    controlName: "AI Decision Logging",
+    description: "All AI interactions logged with confidence scores for auditability.",
+    technicalImplementation: "Structured JSON audit logs per AI request. Logs include prompt hash, model version, confidence score, and user action outcome.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "internal-2",
+    framework: "INTERNAL",
+    controlName: "Quarterly Model Performance Review",
+    description: "Periodic evaluation of AI model outputs for accuracy, fairness, and drift.",
+    technicalImplementation: "Cross-functional review team assesses sample outputs. Bias testing on demographic subgroups. Results documented and acted upon within 30 days.",
+    status: "active",
+    lastReviewedAt: null,
+  },
+];
 
 const frameworkLabels: Record<string, string> = {
   ISO42001: "ISO/IEC 42001",
@@ -58,46 +149,29 @@ function daysSince(date: string | Date | null | undefined): number | null {
 
 export default function AdminGovernance() {
   const { toast } = useToast();
+  const [controls, setControls] = useState<GovernanceControl[]>(MOCK_CONTROLS);
 
-  const { data: controls, isLoading } = useQuery<GovernanceControl[]>({
-    queryKey: ["/api/admin/governance-controls"],
-  });
-
-  const markReviewedMutation = useMutation({
-    mutationFn: async (id: string) => {
-      return await apiRequest(`/api/admin/governance-controls/${id}/reviewed`, {
-        method: "PATCH",
-      });
-    },
-    onSuccess: () => {
-      toast({ title: "Control Reviewed", description: "Last reviewed timestamp updated." });
-      queryClient.invalidateQueries({ queryKey: ["/api/admin/governance-controls"] });
-    },
-    onError: () => {
-      toast({ title: "Error", description: "Failed to update control.", variant: "destructive" });
-    },
-  });
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center py-24" data-testid="loading-governance">
-        <Loader2 className="h-8 w-8 animate-spin text-primary" />
-      </div>
+  const markReviewed = (id: string) => {
+    setControls((prev) =>
+      prev.map((ctrl) =>
+        ctrl.id === id ? { ...ctrl, lastReviewedAt: new Date().toISOString() } : ctrl
+      )
     );
-  }
+    toast({ title: "Control Reviewed", description: "Last reviewed timestamp updated." });
+  };
 
-  const grouped = (controls || []).reduce<Record<string, GovernanceControl[]>>((acc, ctrl) => {
+  const grouped = controls.reduce<Record<string, GovernanceControl[]>>((acc, ctrl) => {
     if (!acc[ctrl.framework]) acc[ctrl.framework] = [];
     acc[ctrl.framework].push(ctrl);
     return acc;
   }, {});
 
-  const totalControls = controls?.length || 0;
-  const activeControls = controls?.filter(c => c.status === "active").length || 0;
-  const needsReview = controls?.filter(c => {
+  const totalControls = controls.length;
+  const activeControls = controls.filter((c) => c.status === "active").length;
+  const needsReview = controls.filter((c) => {
     const days = daysSince(c.lastReviewedAt);
     return days === null || days > 90;
-  }).length || 0;
+  }).length;
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 space-y-8" data-testid="page-admin-governance">
@@ -188,8 +262,7 @@ export default function AdminGovernance() {
                       </div>
                       <Button
                         size="sm"
-                        onClick={() => markReviewedMutation.mutate(ctrl.id)}
-                        disabled={markReviewedMutation.isPending}
+                        onClick={() => markReviewed(ctrl.id)}
                         data-testid={`button-review-${ctrl.id}`}
                       >
                         <RefreshCw className="h-4 w-4 mr-1" />

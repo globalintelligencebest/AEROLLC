@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, Calendar, ShieldCheck } from "lucide-react";
 import aeroLogoWhite from "@assets/aero_logo_white.png";
 import { Link } from "wouter";
+import { GovernanceFooter } from "@/components/GovernanceFooter";
 
 export default function Advisory() {
   return (
@@ -94,6 +95,7 @@ export default function Advisory() {
           </Button>
         </div>
       </section>
+      <GovernanceFooter />
     </div>
   );
 }

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import aeroLogoWhite from "@assets/aero_logo_white.png";
 import { Link } from "wouter";
+import { GovernanceFooter } from "@/components/GovernanceFooter";
 
 const frameworks = [
   {
@@ -324,26 +325,7 @@ export default function SecurityAiGovernance() {
         </div>
       </section>
 
-      <footer className="py-12 border-t">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-sm text-muted-foreground mb-4">
-            This document reflects AERO's current security and AI governance posture.
-            For questions or to report security concerns, contact our team.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/governance">
-              <Button variant="outline" data-testid="link-governance">
-                AI Governance Framework
-              </Button>
-            </Link>
-            <Link href="/">
-              <Button variant="outline" data-testid="link-home-footer">
-                Back to Home
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <GovernanceFooter />
     </div>
   );
 }
