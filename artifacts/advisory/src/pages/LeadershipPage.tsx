@@ -1,11 +1,41 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Award, Users, Globe, Building2, Shield, Target, Heart, Scale } from "lucide-react";
+import { ArrowRight, Award, Users, Globe, Building2, Shield, Target, Heart, Scale, Cpu } from "lucide-react";
 import aeroLogoBlue from "@/assets/aero_logo_blue.png";
-import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
+
+const leaders = [
+  {
+    initials: "SM",
+    name: "Sébastien Moreau",
+    title: "Founder & Managing Director",
+    background:
+      "20+ years in international organizations including peacekeeping, counter-terrorism, and humanitarian affairs. Founded AERO to bring structured, independent AI governance to global enterprises navigating emerging regulation.",
+  },
+  {
+    initials: "AK",
+    name: "Anika Kessler",
+    title: "Head of AI Policy & Regulatory Affairs",
+    background:
+      "Former EU regulatory consultant specializing in data protection and emerging technology law. Led ISO/IEC 42001 readiness programs for financial institutions across Germany, France, and the Netherlands.",
+  },
+  {
+    initials: "JT",
+    name: "James Tran",
+    title: "Principal AI Risk Advisor",
+    background:
+      "Cybersecurity and AI risk specialist with prior roles at leading global consultancies. Designed AI risk frameworks for Fortune 500 clients subject to GDPR, NIST AI RMF, and EU AI Act obligations.",
+  },
+  {
+    initials: "LO",
+    name: "Layla O'Brien",
+    title: "Director of Executive Education",
+    background:
+      "Organizational learning strategist with experience designing AI literacy programs for C-suite audiences. Formerly at McKinsey and Columbia University's Executive Education division.",
+  },
+];
 
 export default function LeadershipPage() {
   return (
@@ -37,149 +67,132 @@ export default function LeadershipPage() {
               Guided by Global Experience
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Our leadership brings decades of experience in international organizations, financial services, and global security.
+              Our leadership brings decades of experience in international organizations, AI regulation, cybersecurity, and enterprise governance.
             </p>
           </div>
 
+          {/* Leadership Team */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {leaders.map(({ initials, name, title, background }) => (
+              <Card key={name} className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <span className="text-primary font-bold text-lg">{initials}</span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">{name}</h3>
+                    <p className="text-sm text-primary font-medium mb-2">{title}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{background}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* Board Overview */}
           <Card className="p-8 md:p-12 mb-12">
             <div className="text-center mb-8">
               <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-12 h-12 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold mb-2">Board of Directors</h3>
+              <h3 className="text-2xl font-semibold mb-2">Advisory Board</h3>
               <p className="text-muted-foreground">
-                Comprising members of international organizations, financial leaders, and security professionals
+                Comprising AI governance experts, regulators, and enterprise risk professionals across Europe, North America, and Asia
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-4 bg-muted/30 rounded-lg">
                 <Globe className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-medium">International Organizations</p>
-                <p className="text-sm text-muted-foreground">Former UN and World Bank officials</p>
+                <p className="font-medium">Regulatory Experts</p>
+                <p className="text-sm text-muted-foreground">Former regulators and standards body members</p>
               </div>
               <div className="text-center p-4 bg-muted/30 rounded-lg">
                 <Building2 className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-medium">Financial Leaders</p>
-                <p className="text-sm text-muted-foreground">Banking and fintech executives</p>
+                <p className="font-medium">Enterprise Leaders</p>
+                <p className="text-sm text-muted-foreground">Chief Risk Officers and compliance executives</p>
               </div>
               <div className="text-center p-4 bg-muted/30 rounded-lg">
                 <Shield className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-medium">Security Experts</p>
-                <p className="text-sm text-muted-foreground">Data protection and compliance specialists</p>
+                <p className="font-medium">AI & Security Specialists</p>
+                <p className="text-sm text-muted-foreground">Cybersecurity and AI ethics researchers</p>
               </div>
             </div>
           </Card>
 
-          {/* OUR MISSION */}
+          {/* Mission & Vision */}
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-center">Our Mission & Values</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-center">Our Mission & Vision</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="p-6">
                 <Target className="w-10 h-10 text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-3">Our Mission</h4>
                 <p className="text-muted-foreground">
-                  To empower globally mobile individuals with clear, accurate, and unbiased tax guidance. We believe that understanding your tax obligations should not be a privilege reserved for those who can afford expensive international tax attorneys.
+                  To help enterprises and governments design, implement, and operationalize responsible AI governance that is aligned with global regulations, human rights principles, and organizational values — without commercial bias or vendor pressure.
                 </p>
               </Card>
               <Card className="p-6">
                 <Heart className="w-10 h-10 text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-3">Our Vision</h4>
                 <p className="text-muted-foreground">
-                  A world where cross-border tax compliance is accessible to everyone, where technology bridges the gap between complex regulations and individual understanding, and where no one faces penalties simply because they lacked the resources to navigate international tax law.
+                  A world where AI is deployed with documented accountability, where governance is a strategic asset rather than a compliance burden, and where every organization — regardless of size — can navigate the regulatory landscape with confidence.
                 </p>
               </Card>
             </div>
           </div>
 
-          {/* CORE VALUES */}
+          {/* Core Values */}
           <div className="bg-muted/30 rounded-2xl p-8 md:p-12 mb-12">
             <h3 className="text-xl font-semibold mb-6 text-center">Core Values That Guide Us</h3>
             <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Scale className="w-6 h-6 text-primary" />
+              {[
+                { icon: Scale, label: "Neutrality", desc: "Vendor-independent. Framework-agnostic." },
+                { icon: Shield, label: "Integrity", desc: "Honest risk assessment, always." },
+                { icon: Cpu, label: "Expertise", desc: "Deep AI governance specialization." },
+                { icon: Users, label: "Partnership", desc: "Long-term client relationships." },
+              ].map(({ icon: Icon, label, desc }) => (
+                <div key={label} className="text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="font-medium">{label}</p>
+                  <p className="text-sm text-muted-foreground">{desc}</p>
                 </div>
-                <p className="font-medium">Neutrality</p>
-                <p className="text-sm text-muted-foreground">Serving all users equally regardless of origin</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Shield className="w-6 h-6 text-primary" />
-                </div>
-                <p className="font-medium">Integrity</p>
-                <p className="text-sm text-muted-foreground">Honest, accurate guidance always</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Globe className="w-6 h-6 text-primary" />
-                </div>
-                <p className="font-medium">Accessibility</p>
-                <p className="text-sm text-muted-foreground">Making complexity understandable</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <p className="font-medium">Service</p>
-                <p className="text-sm text-muted-foreground">Putting user needs first</p>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* FROM THE FOUNDER */}
+          {/* Founder Quote */}
           <div className="bg-primary/5 rounded-2xl p-8 md:p-12 mb-12">
             <h3 className="text-xl font-semibold mb-6">From the Founder</h3>
             <blockquote className="text-muted-foreground leading-relaxed mb-6 italic border-l-4 border-primary pl-6">
-              "As a global citizen, I spent a lifetime watching peers become overwhelmed by the cross-border tax process. With a career working for leading international organizations in counter-terrorism, peacekeeping, and humanitarian affairs, I understood the need for transparent, neutral systems that serve everyone equally. AERO was born from this vision: a platform where the complexity of international tax becomes accessible, and where governments and citizens can find common ground in compliance."
+              "Throughout my career in international organizations — from peacekeeping and counter-terrorism to humanitarian coordination — I watched institutions struggle to build accountable systems. AI is now placing the same challenge on every enterprise. AERO was founded to give organizations the independent, expert guidance they need to deploy AI responsibly, without having to navigate a market full of vendors with conflicting interests."
             </blockquote>
-            <p className="text-sm text-muted-foreground">
-              Founded with the belief that tax compliance should empower, not burden, the globally mobile.
-            </p>
+            <p className="text-sm text-muted-foreground">— Sébastien Moreau, Founder & Managing Director, AERO Advisory</p>
           </div>
 
-          {/* ADVISORY EXPERTISE */}
+          {/* Advisory Expertise */}
           <Card className="p-8 mb-12">
             <h3 className="text-xl font-semibold mb-6 text-center">Advisory Expertise</h3>
             <p className="text-muted-foreground text-center mb-8">
-              Our advisory board brings specialized knowledge across critical domains:
+              Our advisors bring specialized knowledge across critical AI governance domains:
             </p>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Globe className="w-5 h-5 text-primary" />
+              {[
+                { icon: Globe, label: "EU AI Act & International AI Regulation", desc: "Deep expertise in EU AI Act risk classification, compliance timelines, and cross-border implications." },
+                { icon: Shield, label: "Cybersecurity & AI System Security", desc: "Ensuring AI systems are secure by design, with documented threat models and access controls." },
+                { icon: Building2, label: "Enterprise Risk & Internal Controls", desc: "Designing AI governance controls that integrate with existing enterprise risk management frameworks." },
+                { icon: Users, label: "Organizational Change & AI Adoption", desc: "Supporting leadership teams in building AI governance culture and internal oversight capabilities." },
+              ].map(({ icon: Icon, label, desc }) => (
+                <div key={label} className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="font-medium">{label}</p>
+                    <p className="text-sm text-muted-foreground">{desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-medium">International Tax Treaty Specialists</p>
-                  <p className="text-sm text-muted-foreground">Experts in cross-border tax agreements and treaty benefits</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Shield className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">Cybersecurity Professionals</p>
-                  <p className="text-sm text-muted-foreground">Ensuring your sensitive documents remain protected</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Building2 className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">Former Government Officials</p>
-                  <p className="text-sm text-muted-foreground">Insight into regulatory frameworks and compliance expectations</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
-                  <Users className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-medium">Expatriate Community Leaders</p>
-                  <p className="text-sm text-muted-foreground">Understanding the real challenges faced by globally mobile individuals</p>
-                </div>
-              </div>
+              ))}
             </div>
           </Card>
 

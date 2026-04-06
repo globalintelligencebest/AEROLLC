@@ -1,11 +1,37 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Mail, Mic, Newspaper, Video, Globe } from "lucide-react";
+import { ArrowLeft, Mail, Mic, Newspaper, Video, Globe, FileText, ExternalLink } from "lucide-react";
 import aeroLogoBlue from "@/assets/aero_logo_blue.png";
-import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
+
+const pressItems = [
+  {
+    outlet: "AI Governance Quarterly",
+    headline: "AERO Advisory on the EU AI Act: What Enterprises Need to Know Before 2026",
+    date: "March 2026",
+    type: "Feature Interview",
+  },
+  {
+    outlet: "Risk & Compliance Magazine",
+    headline: "Independent AI Governance Advisors Are the New CISOs",
+    date: "January 2026",
+    type: "Op-Ed",
+  },
+  {
+    outlet: "Financial Times (FT Adviser)",
+    headline: "How Mid-Market Firms Are Catching Up on AI Regulation",
+    date: "November 2025",
+    type: "Expert Commentary",
+  },
+  {
+    outlet: "EU Digital Policy Forum",
+    headline: "AERO at the European AI Liability Summit: Closing the Governance Gap",
+    date: "October 2025",
+    type: "Speaking Engagement",
+  },
+];
 
 export default function Press() {
   return (
@@ -32,13 +58,33 @@ export default function Press() {
               Press & Media
             </Badge>
             <h1 className="text-4xl font-semibold mb-4 tracking-tight">
-              Press Inquiries
+              In the News
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              AERO Cooperation welcomes opportunities to participate in public engagement and share our mission for global tax transparency.
+              AERO Advisory contributes expert analysis on AI governance, regulatory compliance, and responsible AI deployment across leading publications and industry events.
             </p>
           </div>
 
+          {/* Recent Coverage */}
+          <div className="space-y-4 mb-12">
+            {pressItems.map(({ outlet, headline, date, type }) => (
+              <Card key={headline} className="p-6">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Badge variant="outline" className="text-xs">{type}</Badge>
+                      <span className="text-xs text-muted-foreground">{date}</span>
+                    </div>
+                    <h3 className="font-semibold text-lg mb-1 leading-snug">{headline}</h3>
+                    <p className="text-sm text-primary font-medium">{outlet}</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground shrink-0 mt-1" />
+                </div>
+              </Card>
+            ))}
+          </div>
+
+          {/* Media Inquiry */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="p-8">
               <div className="flex items-center gap-3 mb-6">
@@ -51,7 +97,7 @@ export default function Press() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-6">
-                AERO Cooperation accepts invitations to participate in public engagement, including conference attendance and speaking engagements on topics of global tax transparency, cross-border compliance, and international cooperation.
+                AERO accepts invitations to speak at conferences and industry events on AI governance, EU AI Act compliance, responsible AI deployment, and enterprise risk management.
               </p>
               <div className="flex items-center gap-2 text-primary">
                 <Mail className="w-4 h-4" />
@@ -72,7 +118,7 @@ export default function Press() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-6">
-                For inclusion in print and online media, including interviews, feature articles, and editorial content about our platform, mission, or the broader topic of international tax compliance.
+                For interviews, feature articles, expert commentary, and editorial content on AI governance topics, reach our communications team directly.
               </p>
               <div className="flex items-center gap-2 text-primary">
                 <Mail className="w-4 h-4" />
@@ -88,7 +134,7 @@ export default function Press() {
               <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Media Resources</h3>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                For press kit materials, logos, executive bios, and other media resources, please contact our press team. We aim to respond to all inquiries within 48 business hours.
+                For press kit materials, leadership bios, background on our AI governance methodology, and other media resources, contact our press team. We aim to respond to all inquiries within 48 business hours.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Badge variant="outline" className="gap-1">
@@ -102,6 +148,10 @@ export default function Press() {
                 <Badge variant="outline" className="gap-1">
                   <Newspaper className="w-3 h-3" />
                   Print Media
+                </Badge>
+                <Badge variant="outline" className="gap-1">
+                  <FileText className="w-3 h-3" />
+                  Whitepapers
                 </Badge>
               </div>
             </div>

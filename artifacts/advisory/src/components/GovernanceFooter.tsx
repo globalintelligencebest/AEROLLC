@@ -105,22 +105,22 @@ export function GovernanceFooter() {
               </li>
               <li>
                 <a
-                  href="mailto:careers@aerocooperation.com?subject=International%20Tax%20Specialist%20Application"
+                  href="mailto:careers@aerocooperation.com?subject=AI%20Governance%20Advisor%20Application"
                   className="flex items-center gap-1.5 hover:text-white transition-colors"
-                  data-testid="link-gov-careers-tax"
+                  data-testid="link-gov-careers-advisor"
                 >
                   <Briefcase className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                  International Tax Specialists
+                  AI Governance Advisors
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:careers@aerocooperation.com?subject=AI%20Governance%20Expert%20Application"
+                  href="mailto:careers@aerocooperation.com?subject=AI%20Risk%20Specialist%20Application"
                   className="flex items-center gap-1.5 hover:text-white transition-colors"
                   data-testid="link-gov-careers-ai"
                 >
                   <Globe className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                  AI Governance Experts
+                  AI Risk Specialists
                 </a>
               </li>
             </ul>
