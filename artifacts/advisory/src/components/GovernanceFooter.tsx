@@ -1,6 +1,6 @@
 import { Mail, MessageSquare, ExternalLink, Briefcase, Globe, Building2 } from "lucide-react";
 import { Link } from "wouter";
-import aeroLogoWhite from "@assets/aero_logo_white.png";
+import aeroLogoWhite from "@/assets/aero_logo_white.png";
 
 export function GovernanceFooter() {
   return (

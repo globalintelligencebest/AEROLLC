@@ -12,7 +12,7 @@ import {
   Database,
   CheckCircle2,
 } from "lucide-react";
-import aeroLogoWhite from "@assets/aero_logo_white.png";
+import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 
 export default function Governance() {

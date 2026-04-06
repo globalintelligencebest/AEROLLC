@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Mail, Calendar, ShieldCheck } from "lucide-react";
-import aeroLogoWhite from "@assets/aero_logo_white.png";
+import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
 

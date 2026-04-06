@@ -15,7 +15,7 @@ import {
   KeyRound,
   ClipboardCheck,
 } from "lucide-react";
-import aeroLogoWhite from "@assets/aero_logo_white.png";
+import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
 

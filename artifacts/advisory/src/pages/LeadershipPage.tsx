@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Award, Users, Globe, Building2, Shield, Target, Heart, Scale } from "lucide-react";
-import aeroLogoBlue from "@assets/aero_logo_blue.png";
-import aeroLogoWhite from "@assets/aero_logo_white.png";
+import aeroLogoBlue from "@/assets/aero_logo_blue.png";
+import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
 
