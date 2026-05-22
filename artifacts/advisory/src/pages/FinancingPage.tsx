@@ -23,10 +23,17 @@ const packageItems = [
   "Operating agreement or corporate bylaws",
   "Compliance calendar with deadline reminders",
   "US business bank account introduction & guidance",
-  "AI-powered business document toolkit",
-  "AI governance advisory — included in your package",
   "Post-formation advisory access (30 days)",
   "Digital document delivery & secure storage",
+];
+
+const aiAdvisoryItems = [
+  "AI usage policy development for your business",
+  "FTC AI disclosure obligation assessment",
+  "EU AI Act applicability review (for EU-facing businesses)",
+  "State AI law monitoring and compliance alerts",
+  "AI vendor assessment and risk review",
+  "AI governance documentation tailored to your industry",
 ];
 
 const faqs = [
@@ -51,8 +58,8 @@ const faqs = [
     a: "State annual report fees typically range from $50–$400 depending on your state. Registered agent renewal is a separate flat fee after year one. We provide a full compliance calendar so you're never caught off guard.",
   },
   {
-    q: "What does 'AI governance advisory included' mean?",
-    a: "If you use AI tools in your business (ChatGPT, automation, AI-powered software), our advisory guidance helps you understand your obligations as regulations evolve. This is included in your AERO package at no extra cost.",
+    q: "Is AI governance advisory included in the formation package?",
+    a: "No — AI governance is a separate, specialist service with its own pricing. If you use AI tools in your business (ChatGPT, automation, AI-generated content), our AI advisory team can assess your compliance obligations as a standalone engagement.",
   },
 ];
 
@@ -181,6 +188,58 @@ export default function FinancingPage() {
                 <span className="text-xs font-medium text-primary">No US address or SSN required</span>
               </Card>
             </div>
+          </div>
+
+          {/* AI Advisory Add-on */}
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-semibold mb-2">Add-On: AI Governance Advisory</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Not included in the formation package. If your business uses AI tools, this is a
+                separate specialist engagement — priced on scope and complexity.
+              </p>
+            </div>
+            <Card className="p-8 md:p-10 border border-indigo-200 bg-indigo-50/50">
+              <div className="grid md:grid-cols-2 gap-8 items-start">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Shield className="h-6 w-6 text-indigo-600" />
+                    <h3 className="text-xl font-bold">AI Governance Advisory</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-6">
+                    Specialist advisory for businesses that use AI tools — covering regulatory compliance,
+                    disclosure obligations, internal policy, and ongoing monitoring as AI laws evolve.
+                  </p>
+                  <div className="mb-6">
+                    <span className="text-3xl font-bold text-indigo-700">Custom pricing</span>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Quoted based on scope, business type, and AI usage profile
+                    </p>
+                  </div>
+                  <Button className="rounded-full bg-indigo-600 hover:bg-indigo-700 text-white" asChild>
+                    <a href="mailto:contact@aerocooperation.com?subject=AI%20Governance%20Advisory%20Enquiry">
+                      Request a Quote
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-indigo-800 mb-3">What's covered:</p>
+                  <ul className="space-y-2">
+                    {aiAdvisoryItems.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-indigo-600 mt-0.5 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-xs text-muted-foreground mt-4 italic">
+                    This service is independent of business formation and can be engaged at any time —
+                    before or after your company is established.
+                  </p>
+                </div>
+              </div>
+            </Card>
           </div>
 
           {/* State Fees */}

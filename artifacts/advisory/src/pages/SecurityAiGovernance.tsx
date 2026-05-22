@@ -138,28 +138,56 @@ export default function SecurityAiGovernance() {
       <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <Badge className="mb-6 gradient-primary text-white border-0 px-4 py-2 rounded-full" data-testid="badge-hero">
-            Technology & Compliance
+            Specialist Advisory · Separate Pricing
           </Badge>
           <h1 className="text-4xl md:text-5xl font-display mb-6" data-testid="text-hero-title">
-            AI Tools & Compliance —<br />Built Into Your Package
+            AI Governance Advisory
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed" data-testid="text-hero-description">
-            Every AERO formation package includes a suite of AI-powered business tools,
-            compliance monitoring, and ongoing AI governance advisory — so your new US business
-            is set up not just legally, but technologically.
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto" data-testid="text-hero-description">
+            A dedicated advisory service for businesses that use AI tools. Separate from business
+            formation — priced on scope and engaged independently whenever you need it.
           </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild className="rounded-full px-8 py-4 text-lg bg-indigo-600 hover:bg-indigo-700 text-white">
+              <a href="mailto:contact@aerocooperation.com?subject=AI%20Governance%20Advisory%20Enquiry">Request a Quote</a>
+            </Button>
+            <Button asChild variant="outline" className="rounded-full px-8 py-4 text-lg">
+              <Link href="/financing">View Formation Pricing</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* WHAT'S INCLUDED */}
+      {/* WHO NEEDS THIS */}
+      <section className="bg-indigo-950/5 py-16 border-y">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <p className="text-sm font-medium uppercase tracking-widest text-muted-foreground mb-8">
+            Who this service is for
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 text-left">
+            {[
+              { title: "Creators using AI-generated content", desc: "If you sell AI-generated art, writing, or music — FTC disclosure rules and platform policies apply to you." },
+              { title: "Businesses with EU customers", desc: "The EU AI Act may apply if you serve European customers with AI-assisted products or automated decision-making." },
+              { title: "Founders using AI in operations", desc: "If ChatGPT, automation tools, or AI software are part of how you run your business, you need a usage policy." },
+            ].map(({ title, desc }) => (
+              <Card key={title} className="p-5">
+                <CheckCircle2 className="h-5 w-5 text-indigo-600 mb-3" />
+                <p className="font-semibold text-sm mb-1">{title}</p>
+                <p className="text-muted-foreground text-xs leading-relaxed">{desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT'S COVERED */}
       <section id="ai-tools" className="max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-3xl font-semibold mb-4 text-center" data-testid="text-frameworks-title">
-          What's Included: Your AI Business Toolkit
+          What's Covered
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          These tools are included in every AERO formation package at no extra cost —
-          designed specifically for hobbyists and new business owners who need professional-grade
-          tools without enterprise pricing.
+          Each AI governance engagement is tailored to your business type, the AI tools you use,
+          and the markets you operate in. Here are the core areas we address.
         </p>
 
         <div className="grid gap-8">

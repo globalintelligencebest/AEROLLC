@@ -99,11 +99,6 @@ const services = [
   },
 ];
 
-const addons = [
-  { icon: Zap, title: "AI Business Toolkit", desc: "Document drafting, contract generation, and compliance monitoring powered by AI. Included in your package." },
-  { icon: Globe, title: "AI Governance Advisory", desc: "Enterprise-grade AI governance guidance adapted for small businesses. Ensure your use of AI tools stays compliant as regulations evolve." },
-  { icon: Users, title: "Ongoing Advisory Access", desc: "Post-formation questions answered by our team — business structure changes, adding members, state expansion, and more." },
-];
 
 export default function Advisory() {
   return (
@@ -168,21 +163,50 @@ export default function Advisory() {
           ))}
         </div>
 
-        {/* ALSO INCLUDED */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-semibold mb-3 text-center">Also Included: AI Tools & Advisory</h2>
-          <p className="text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-            Your AERO package doesn't stop at formation paperwork. You get access to our AI business toolkit
-            and our advisory team — so you're supported well beyond day one.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            {addons.map(({ icon: Icon, title, desc }) => (
-              <Card key={title} className="p-6 rounded-2xl shadow-sm text-center">
-                <Icon className="h-8 w-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">{title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{desc}</p>
-              </Card>
-            ))}
+        {/* AI ADVISORY SEPARATE */}
+        <div className="mt-16 border-t pt-16">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-800 mb-4">
+                Separate service · Custom pricing
+              </span>
+              <h2 className="text-2xl font-semibold mb-4">AI Governance Advisory</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                AERO also provides specialist AI governance advisory — but this is entirely
+                separate from the formation package and priced independently.
+              </p>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                If your business uses AI tools (ChatGPT, automation, AI-generated products or content),
+                you may have regulatory obligations under the FTC, EU AI Act, or emerging state laws.
+                Our AI advisory team assesses your exposure and builds the policies and documentation
+                you need to operate compliantly.
+              </p>
+              <div className="flex gap-3">
+                <Button asChild className="rounded-full bg-indigo-600 hover:bg-indigo-700 text-white">
+                  <a href="mailto:contact@aerocooperation.com?subject=AI%20Governance%20Advisory%20Enquiry">
+                    Request a Quote
+                  </a>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full">
+                  <Link href="/security-ai-governance">Learn More</Link>
+                </Button>
+              </div>
+            </div>
+            <div className="space-y-4">
+              {[
+                { icon: Zap, title: "AI Disclosure & Transparency", desc: "FTC and state-level obligations for disclosing AI use to customers and clients." },
+                { icon: Globe, title: "EU AI Act Assessment", desc: "Whether and how the EU AI Act applies to your business if you sell to European customers." },
+                { icon: Users, title: "Internal AI Policy", desc: "Custom AI usage policies, vendor frameworks, and governance documentation for your team." },
+              ].map(({ icon: Icon, title, desc }) => (
+                <Card key={title} className="p-5 rounded-xl flex items-start gap-4">
+                  <Icon className="h-5 w-5 text-indigo-600 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="font-medium text-sm">{title}</p>
+                    <p className="text-muted-foreground text-xs mt-0.5 leading-relaxed">{desc}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </main>

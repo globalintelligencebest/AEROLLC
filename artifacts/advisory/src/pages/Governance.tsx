@@ -42,8 +42,8 @@ const included = [
   "Operating agreement or corporate bylaws",
   "Compliance calendar with key annual deadlines",
   "US business bank account introduction",
-  "AI-powered business toolkit for your first year",
-  "Ongoing AI governance advisory — included in package",
+  "Digital document delivery & secure storage",
+  "Post-formation support (30 days)",
 ];
 
 const whyUS = [
@@ -163,8 +163,8 @@ export default function Governance() {
                 Everything You Need to Launch Your US Business
               </h2>
               <p className="text-blue-200 mb-8 leading-relaxed">
-                You pay once. We handle formation, compliance setup, and give you the tools
-                to run your new business from day one — including AI-powered advisory built in.
+                You pay once. We handle every step of formation — entity filing, EIN,
+                registered agent, governing documents, and banking guidance.
               </p>
               <Link href="/financing">
                 <Button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-full px-6 py-3">
@@ -240,43 +240,49 @@ export default function Governance() {
         </div>
       </section>
 
-      {/* AI TOOLS INCLUDED */}
+      {/* AI ADVISORY ADD-ON */}
       <section className="py-24 bg-blue-950/40">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Card className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/40">
-                <FileText className="h-8 w-8 text-cyan-400 mb-3" />
-                <h3 className="text-white font-semibold mb-2">AI Business Document Assistant</h3>
-                <p className="text-blue-200 text-sm">Generate contracts, invoices, client agreements, and business policies tailored to your industry.</p>
-              </Card>
-              <Card className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/40">
-                <Shield className="h-8 w-8 text-indigo-400 mb-3" />
-                <h3 className="text-white font-semibold mb-2">Compliance Monitoring</h3>
-                <p className="text-blue-200 text-sm">Stay on top of state filing deadlines, annual reports, and regulatory requirements — we track them for you.</p>
-              </Card>
-              <Card className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/40">
-                <DollarSign className="h-8 w-8 text-green-400 mb-3" />
-                <h3 className="text-white font-semibold mb-2">Business Structure Advisory</h3>
-                <p className="text-blue-200 text-sm">AI-assisted guidance on when to shift from LLC to S-Corp, how to pay yourself, and how your business income is structured.</p>
-              </Card>
-            </div>
-
             <div>
               <Badge className="mb-4 bg-indigo-500/20 text-indigo-300 border-indigo-500/30">
-                AI tools — included in your package
+                Optional add-on · Separate pricing
               </Badge>
               <h2 className="text-3xl font-semibold mb-4 text-white">
-                Your Business Runs Smarter With AI Built In
+                Need AI Governance Advisory Too?
               </h2>
-              <p className="text-blue-200 leading-relaxed mb-6">
-                Every AERO formation package includes access to our AI-powered business toolkit.
-                Get help drafting documents, staying compliant, and making informed decisions — without hiring an army of advisors.
+              <p className="text-blue-200 leading-relaxed mb-4">
+                If your business uses AI tools — ChatGPT, automation, AI-generated content —
+                AERO also offers a dedicated AI governance advisory service to keep you
+                compliant as regulations evolve.
               </p>
-              <p className="text-blue-300 text-sm leading-relaxed">
-                Our AI advisory tools are governed by the same enterprise-grade standards we apply
-                to Fortune 500 clients — so your small business gets big-company infrastructure from day one.
+              <p className="text-blue-300 text-sm leading-relaxed mb-8">
+                This is specialist expertise, priced separately. It covers FTC guidelines,
+                the EU AI Act (if you sell to EU customers), state AI laws, and platform
+                policy compliance — tailored to your business type.
               </p>
+              <Link href="/security-ai-governance">
+                <Button className="bg-indigo-500 hover:bg-indigo-400 text-white font-semibold rounded-full px-6 py-3">
+                  Learn About AI Advisory
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                { icon: FileText, title: "AI Disclosure Obligations", desc: "Know when and how to disclose AI use to your customers — required under FTC guidelines and emerging state laws." },
+                { icon: Shield, title: "EU AI Act Compliance", desc: "Selling to EU customers? We assess whether and how the EU AI Act applies to your AI-assisted products." },
+                { icon: DollarSign, title: "AI Policy Development", desc: "Custom internal AI usage policies, vendor assessment frameworks, and governance documentation for your business." },
+              ].map(({ icon: Icon, title, desc }) => (
+                <Card key={title} className="p-5 rounded-2xl bg-slate-800/60 border border-slate-700/40 flex items-start gap-4">
+                  <Icon className="h-6 w-6 text-indigo-400 mt-0.5 shrink-0" />
+                  <div>
+                    <h3 className="text-white font-semibold text-sm mb-1">{title}</h3>
+                    <p className="text-blue-200 text-xs leading-relaxed">{desc}</p>
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

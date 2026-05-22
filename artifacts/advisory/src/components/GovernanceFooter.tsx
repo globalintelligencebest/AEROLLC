@@ -15,7 +15,7 @@ export function GovernanceFooter() {
               Helping hobbyists, creators, and freelancers launch their US business — with everything handled at one flat rate.
             </p>
             <p className="text-xs text-white/50 leading-relaxed">
-              AERO also provides AI governance advisory included in every formation package, keeping your business compliant as AI regulations evolve.
+              AERO also offers specialist AI governance advisory as a separate service — for businesses navigating FTC guidelines, the EU AI Act, and emerging AI regulations.
             </p>
           </div>
 
