@@ -12,28 +12,28 @@ const leaders = [
     name: "Sébastien Moreau",
     title: "Founder & Managing Director",
     background:
-      "20+ years in international organizations including peacekeeping, counter-terrorism, and humanitarian affairs. Founded AERO to bring structured, independent AI governance to global enterprises navigating emerging regulation.",
+      "Former international organizations specialist with 20+ years across cross-border compliance and institutional governance. Founded AERO to make US business formation accessible to creators, freelancers, and hobbyists worldwide — with proper legal structure and AI tools built in from the start.",
   },
   {
     initials: "AK",
     name: "Anika Kessler",
-    title: "Head of AI Policy & Regulatory Affairs",
+    title: "Head of Regulatory Affairs",
     background:
-      "Former EU regulatory consultant specializing in data protection and emerging technology law. Led ISO/IEC 42001 readiness programs for financial institutions across Germany, France, and the Netherlands.",
+      "Corporate attorney specializing in US entity formation and international business law. Has guided hundreds of non-US residents through LLC and C-Corp setup, EIN applications, and ongoing compliance — including clients from over 40 countries.",
   },
   {
     initials: "JT",
     name: "James Tran",
-    title: "Principal AI Risk Advisor",
+    title: "Head of Compliance & Technology",
     background:
-      "Cybersecurity and AI risk specialist with prior roles at leading global consultancies. Designed AI risk frameworks for Fortune 500 clients subject to GDPR, NIST AI RMF, and EU AI Act obligations.",
+      "Business compliance and AI governance specialist with a background at leading global consultancies. Oversees AERO's AI advisory toolkit and ensures every client's business has the technology and compliance infrastructure to scale responsibly.",
   },
   {
     initials: "LO",
     name: "Layla O'Brien",
-    title: "Director of Executive Education",
+    title: "Director of Client Experience",
     background:
-      "Organizational learning strategist with experience designing AI literacy programs for C-suite audiences. Formerly at McKinsey and Columbia University's Executive Education division.",
+      "Entrepreneurship educator and small business advocate. Formerly designed small business launch programs at Columbia University's Executive Education division. Ensures every AERO client — from first-time founders to seasoned creators — feels supported throughout the formation process.",
   },
 ];
 
@@ -64,10 +64,11 @@ export default function LeadershipPage() {
               Leadership
             </Badge>
             <h1 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">
-              Guided by Global Experience
+              Experts in Getting You Started
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Our leadership brings decades of experience in international organizations, AI regulation, cybersecurity, and enterprise governance.
+              Our team combines deep expertise in US business law, international compliance,
+              and AI governance — purpose-built to serve hobbyists and creators becoming business owners.
             </p>
           </div>
 
@@ -89,32 +90,33 @@ export default function LeadershipPage() {
             ))}
           </div>
 
-          {/* Board Overview */}
+          {/* Advisory Board */}
           <Card className="p-8 md:p-12 mb-12">
             <div className="text-center mb-8">
               <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-12 h-12 text-primary" />
               </div>
-              <h3 className="text-2xl font-semibold mb-2">Advisory Board</h3>
+              <h3 className="text-2xl font-semibold mb-2">Advisory Network</h3>
               <p className="text-muted-foreground">
-                Comprising AI governance experts, regulators, and enterprise risk professionals across Europe, North America, and Asia
+                US attorneys, CPAs, banking partners, and AI specialists who support AERO clients
+                across formations, ongoing compliance, and business growth
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-4 bg-muted/30 rounded-lg">
                 <Globe className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-medium">Regulatory Experts</p>
-                <p className="text-sm text-muted-foreground">Former regulators and standards body members</p>
+                <p className="font-medium">US Legal Experts</p>
+                <p className="text-sm text-muted-foreground">Licensed attorneys in Delaware, Wyoming, and Florida</p>
               </div>
               <div className="text-center p-4 bg-muted/30 rounded-lg">
                 <Building2 className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-medium">Enterprise Leaders</p>
-                <p className="text-sm text-muted-foreground">Chief Risk Officers and compliance executives</p>
+                <p className="font-medium">Banking Partners</p>
+                <p className="text-sm text-muted-foreground">US bank and fintech relationships for business accounts</p>
               </div>
               <div className="text-center p-4 bg-muted/30 rounded-lg">
                 <Shield className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-medium">AI & Security Specialists</p>
-                <p className="text-sm text-muted-foreground">Cybersecurity and AI ethics researchers</p>
+                <p className="font-medium">AI & Compliance</p>
+                <p className="text-sm text-muted-foreground">Technology advisors keeping your business future-ready</p>
               </div>
             </div>
           </Card>
@@ -127,14 +129,18 @@ export default function LeadershipPage() {
                 <Target className="w-10 h-10 text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-3">Our Mission</h4>
                 <p className="text-muted-foreground">
-                  To help enterprises and governments design, implement, and operationalize responsible AI governance that is aligned with global regulations, human rights principles, and organizational values — without commercial bias or vendor pressure.
+                  To remove every barrier between a person with a great idea or a growing hobby and
+                  a properly structured US business — by handling all the paperwork, compliance, and
+                  legal setup at one transparent flat rate.
                 </p>
               </Card>
               <Card className="p-6">
                 <Heart className="w-10 h-10 text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-3">Our Vision</h4>
                 <p className="text-muted-foreground">
-                  A world where AI is deployed with documented accountability, where governance is a strategic asset rather than a compliance burden, and where every organization — regardless of size — can navigate the regulatory landscape with confidence.
+                  A world where anyone — regardless of background, country, or business experience —
+                  can launch a legitimate US company and operate with confidence, legal protection,
+                  and the tools to grow.
                 </p>
               </Card>
             </div>
@@ -145,10 +151,10 @@ export default function LeadershipPage() {
             <h3 className="text-xl font-semibold mb-6 text-center">Core Values That Guide Us</h3>
             <div className="grid md:grid-cols-4 gap-6">
               {[
-                { icon: Scale, label: "Neutrality", desc: "Vendor-independent. Framework-agnostic." },
-                { icon: Shield, label: "Integrity", desc: "Honest risk assessment, always." },
-                { icon: Cpu, label: "Expertise", desc: "Deep AI governance specialization." },
-                { icon: Users, label: "Partnership", desc: "Long-term client relationships." },
+                { icon: Scale, label: "Clarity", desc: "One price. No surprises." },
+                { icon: Shield, label: "Integrity", desc: "Honest guidance, always." },
+                { icon: Cpu, label: "Expertise", desc: "US formation specialists." },
+                { icon: Users, label: "Access", desc: "Democratizing business ownership." },
               ].map(({ icon: Icon, label, desc }) => (
                 <div key={label} className="text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -165,23 +171,26 @@ export default function LeadershipPage() {
           <div className="bg-primary/5 rounded-2xl p-8 md:p-12 mb-12">
             <h3 className="text-xl font-semibold mb-6">From the Founder</h3>
             <blockquote className="text-muted-foreground leading-relaxed mb-6 italic border-l-4 border-primary pl-6">
-              "Throughout my career in international organizations — from peacekeeping and counter-terrorism to humanitarian coordination — I watched institutions struggle to build accountable systems. AI is now placing the same challenge on every enterprise. AERO was founded to give organizations the independent, expert guidance they need to deploy AI responsibly, without having to navigate a market full of vendors with conflicting interests."
+              "I've watched too many talented people — makers, freelancers, and creators — leave money
+              on the table or expose themselves to personal liability because forming a business seemed
+              complicated and expensive. AERO exists to change that. You should be able to focus on your
+              craft while we handle the legal and compliance side — for one straightforward price."
             </blockquote>
             <p className="text-sm text-muted-foreground">— Sébastien Moreau, Founder & Managing Director, AERO Advisory</p>
           </div>
 
-          {/* Advisory Expertise */}
+          {/* Expertise Areas */}
           <Card className="p-8 mb-12">
-            <h3 className="text-xl font-semibold mb-6 text-center">Advisory Expertise</h3>
+            <h3 className="text-xl font-semibold mb-6 text-center">Our Areas of Expertise</h3>
             <p className="text-muted-foreground text-center mb-8">
-              Our advisors bring specialized knowledge across critical AI governance domains:
+              Our team brings specialized knowledge across the full spectrum of US business formation and operation:
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { icon: Globe, label: "EU AI Act & International AI Regulation", desc: "Deep expertise in EU AI Act risk classification, compliance timelines, and cross-border implications." },
-                { icon: Shield, label: "Cybersecurity & AI System Security", desc: "Ensuring AI systems are secure by design, with documented threat models and access controls." },
-                { icon: Building2, label: "Enterprise Risk & Internal Controls", desc: "Designing AI governance controls that integrate with existing enterprise risk management frameworks." },
-                { icon: Users, label: "Organizational Change & AI Adoption", desc: "Supporting leadership teams in building AI governance culture and internal oversight capabilities." },
+                { icon: Globe, label: "US Entity Formation (LLC & C-Corp)", desc: "State selection, filing, EIN, operating agreements, and registered agent services across all 50 states." },
+                { icon: Shield, label: "Non-Resident Business Setup", desc: "Navigating IRS and state requirements for international founders without US SSNs or addresses." },
+                { icon: Building2, label: "Business Banking & Finance", desc: "Relationships with US banks and fintech platforms that work for non-resident business owners." },
+                { icon: Users, label: "AI Tools & Governance", desc: "AI-powered business toolkits and compliance advisory to keep your business running efficiently and responsibly." },
               ].map(({ icon: Icon, label, desc }) => (
                 <div key={label} className="flex items-start gap-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center shrink-0">
@@ -197,7 +206,7 @@ export default function LeadershipPage() {
           </Card>
 
           <div className="text-center">
-            <Button size="lg" className="h-12 px-8" asChild>
+            <Button size="lg" className="h-12 px-8 rounded-full" asChild>
               <a href="mailto:contact@aerocooperation.com">
                 Contact Our Team
                 <ArrowRight className="ml-2 h-5 w-5" />

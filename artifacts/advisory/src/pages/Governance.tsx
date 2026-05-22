@@ -5,15 +5,53 @@ import { GovernanceFooter } from "@/components/GovernanceFooter";
 import {
   Globe,
   Shield,
-  Calendar,
   FileText,
-  Lock,
-  Scale,
-  Database,
   CheckCircle2,
+  Building2,
+  DollarSign,
+  Zap,
+  Users,
+  ArrowRight,
+  Star,
 } from "lucide-react";
 import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
+
+const steps = [
+  {
+    step: "01",
+    title: "Tell us about your hobby or project",
+    desc: "A short intake form — we learn what you do and what kind of US entity makes the most sense for you.",
+  },
+  {
+    step: "02",
+    title: "We handle all the paperwork",
+    desc: "State filing, EIN application, registered agent setup, operating agreement — all done for you.",
+  },
+  {
+    step: "03",
+    title: "Your US business is live",
+    desc: "Receive your formation documents, start opening a US bank account, and operate legally as a US business.",
+  },
+];
+
+const included = [
+  "LLC or C-Corp formation in your chosen US state",
+  "Employer Identification Number (EIN) from the IRS",
+  "Registered agent service — first year included",
+  "Operating agreement or corporate bylaws",
+  "Compliance calendar with key annual deadlines",
+  "US business bank account introduction",
+  "AI-powered business toolkit for your first year",
+  "Ongoing AI governance advisory — included in package",
+];
+
+const whyUS = [
+  { stat: "330M+", label: "Consumer market" },
+  { stat: "$1T+", label: "E-commerce spend" },
+  { stat: "50 states", label: "One single filing" },
+  { stat: "~7 days", label: "Average formation time" },
+];
 
 export default function Governance() {
   return (
@@ -26,183 +64,250 @@ export default function Governance() {
           </Link>
 
           <div className="hidden md:flex gap-6 text-sm font-medium">
-            <a href="#framework" className="text-white/80 hover:text-white transition-colors">Framework</a>
-            <a href="#compliance" className="text-white/80 hover:text-white transition-colors">Regulatory Alignment</a>
-            <a href="#controls" className="text-white/80 hover:text-white transition-colors">Controls</a>
-            <a href="#consultation" className="text-white/80 hover:text-white transition-colors">Consultation</a>
+            <Link href="/advisory" className="text-white/80 hover:text-white transition-colors">Services</Link>
+            <Link href="/financing" className="text-white/80 hover:text-white transition-colors">Pricing</Link>
+            <Link href="/government" className="text-white/80 hover:text-white transition-colors">US Guide</Link>
+            <Link href="/leadership" className="text-white/80 hover:text-white transition-colors">Team</Link>
           </div>
+
+          <Button
+            asChild
+            className="bg-white text-blue-900 hover:bg-blue-50 rounded-full px-5 py-2 text-sm font-semibold hidden md:flex"
+          >
+            <a href="mailto:contact@aerocooperation.com">Get Started</a>
+          </Button>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="py-24 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-800 text-center">
-        <div className="max-w-4xl mx-auto px-4">
+      <section className="py-28 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-800 text-center relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <Badge className="mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm px-4 py-2 rounded-full">
-            AI Governance for Real-World Business Risk
+            One flat rate · Everything included
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-display mb-6 text-white">
-            Understand, Control, and Safely Scale Your Use of AI
+          <h1 className="text-4xl md:text-6xl font-display mb-6 text-white leading-tight">
+            Turn Your Hobby Into a<br />
+            <span className="text-cyan-300">Registered US Business</span>
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
-            Most businesses are already using AI—often without realizing where or how.
-            AERO helps you identify where AI is impacting your business and reduce hidden risks.
+          <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto mb-10">
+            Whether you sell handmade goods, run a YouTube channel, freelance, or build software on the side —
+            AERO gets you properly incorporated in the United States so you can operate, get paid, and grow.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/advisory">
+              <Button className="bg-white text-blue-800 hover:bg-blue-50 rounded-full px-8 py-4 text-lg font-semibold shadow-xl">
+                See What's Included
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="/financing">
+              <Button variant="outline" className="border-white/40 text-white hover:bg-white/10 rounded-full px-8 py-4 text-lg">
+                View Pricing
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-
-      {/* CONTROL ENVIRONMENT */}
-      <section id="why-it-matters" className="py-24 bg-slate-950">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold mb-12 text-white">
-            Why This Matters Now
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            {[
-              " 75% of enterprises are expected to implement AI governance by 2025  ",
-              "  80% of leaders cite risk as the main barrier to AI adoption ",
-              " Companies with controls are far more likely to see ROI ",
-              " Up to 40% of AI projects fail due to lack of oversight  ",
-      " 60% of organizations lack formal AI governance frameworks today ",
-      " Over 70% of AI leaders report concerns about data quality and model reliability ",
-            ].map((item, index) => (
-              <div key={index} className="flex gap-3 items-start">
-                <CheckCircle2 className="text-cyan-400 mt-1 shrink-0" />
-                <p className="text-blue-200 text-sm">{item}</p>
+      {/* WHY THE US */}
+      <section className="py-16 bg-blue-950/60 border-y border-white/5">
+        <div className="max-w-5xl mx-auto px-6">
+          <p className="text-center text-blue-300 text-sm font-medium uppercase tracking-widest mb-8">
+            Why establish your business in the United States
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {whyUS.map(({ stat, label }) => (
+              <div key={label} className="text-center">
+                <p className="text-3xl md:text-4xl font-bold text-white mb-1">{stat}</p>
+                <p className="text-blue-300 text-sm">{label}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CORE FRAMEWORK */}
-      <section id="framework" className="max-w-6xl mx-auto px-6 py-24">
-        <h2 className="text-3xl font-semibold mb-12 text-center text-white">
-          How You Stay in Control
-        </h2>
-
-        <div className="grid gap-8 md:grid-cols-2">
-          <Card className="p-8 rounded-2xl shadow-lg bg-blue-900/40 border border-blue-700/30">
-            <Shield className="h-10 w-10 text-blue-300 mb-4" />
-            <h3 className="text-xl font-semibold mb-4 text-white">AI Does Not Act on Its Own</h3>
-            <p className="text-blue-200 leading-relaxed">
-              AI is used as a support tool—not something that acts independently.
-              No decisions, financial actions, or critical outcomes happen without human approval.
-            </p>
-          </Card>
-
-          <Card className="p-8 rounded-2xl shadow-lg bg-cyan-900/30 border border-cyan-700/30">
-            <Calendar className="h-10 w-10 text-cyan-300 mb-4" />
-            <h3 className="text-xl font-semibold mb-4 text-white">You Stay in Control</h3>
-            <p className="text-blue-200 leading-relaxed">
-              AI provides recommendations, but your team makes the final decisions.
-            </p>
-          </Card>
-
-          <Card className="p-8 rounded-2xl shadow-lg bg-indigo-900/30 border border-indigo-700/30">
-            <FileText className="h-10 w-10 text-indigo-300 mb-4" />
-            <h3 className="text-xl font-semibold mb-4 text-white">Full Visibility</h3>
-            <p className="text-blue-200 leading-relaxed">
-              Every AI interaction can be tracked, reviewed, and explained.
-              You can see what was asked, what was generated, and how outcomes were supported.
-            </p>
-          </Card>
-
-          <Card className="p-8 rounded-2xl shadow-lg bg-slate-800/60 border border-slate-700/40">
-            <Database className="h-10 w-10 text-slate-300 mb-4" />
-            <h3 className="text-xl font-semibold mb-4 text-white">Your Data Stays Protected</h3>
-            <p className="text-blue-200 leading-relaxed">
-              We limit how data is used and ensure your information is never used to train external AI models.
-            </p>
-          </Card>
-        </div>
-      </section>
-
-      {/* REGULATORY ALIGNMENT */}
-      <section id="compliance" className="bg-blue-950/60 py-24">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold mb-12 text-center text-white">
-            Built to Reduce Legal and Compliance Risk
+      {/* HOW IT WORKS */}
+      <section className="py-24 bg-slate-950">
+        <div className="max-w-5xl mx-auto px-6">
+          <h2 className="text-3xl font-semibold mb-4 text-center text-white">
+            How It Works
           </h2>
+          <p className="text-center text-blue-300 mb-16 max-w-2xl mx-auto">
+            From signup to a fully formed US company in as little as one week.
+            We guide you through every step and do the heavy lifting for you.
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 rounded-2xl shadow-md bg-blue-900/40 border border-blue-700/30">
-              <Scale className="h-8 w-8 text-blue-300 mb-4" />
-              <h3 className="text-xl font-semibold mb-4 text-white">Data Protection & Privacy</h3>
-              <ul className="space-y-3 text-blue-200 text-sm">
-                <li>• Limit how AI uses sensitive data  </li>
-                <li>• Reduce cross-border data exposure risks</li>
-                <li>• Support access and deletion requirements</li>
-                <li>• Build privacy into how AI is used from the start</li>
-              </ul>
-            </Card>
-
-            <Card className="p-8 rounded-2xl shadow-md bg-indigo-900/30 border border-indigo-700/30">
-              <Lock className="h-8 w-8 text-indigo-300 mb-4" />
-              <h3 className="text-xl font-semibold mb-4 text-white">Aligned with Global Standards</h3>
-              <ul className="space-y-3 text-blue-200 text-sm">
-                <li>• EU AI Act</li>
-                <li>• NIST AI Risk Management Framework</li>
-                <li>• ISO security and risk standards</li>
-                <li>• SOC 2 expectations</li>
-              </ul>
-            </Card>
-          </div>
-
-          <div className="mt-12 text-center text-blue-300 max-w-3xl mx-auto text-sm leading-relaxed">
-            AERO doesn't replace your legal or compliance teams—we help you reduce risk and avoid costly mistakes as AI becomes more regulated.
-          </div>
-        </div>
-      </section>
-
-      {/* CONTROL ENVIRONMENT */}
-      <section id="controls" className="py-24 bg-slate-950">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold mb-12 text-white">
-            How Risk Is Reduced in Practice
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8 text-left">
-            {[
-              "Clear rules around how AI can be used",
-              "Controlled access to systems and data",
-              "Full visibility over AI implementation",
-              "Human review before important decisions",
-              "No autonomous AI actions",
-              "Configurable controls for your business",
-            ].map((item, index) => (
-              <div key={index} className="flex gap-3 items-start">
-                <CheckCircle2 className="text-cyan-400 mt-1 shrink-0" />
-                <p className="text-blue-200 text-sm">{item}</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {steps.map(({ step, title, desc }) => (
+              <div key={step} className="relative">
+                <div className="text-6xl font-bold text-blue-800/50 mb-4 font-display">{step}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+                <p className="text-blue-200 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CONSULTATION CTA */}
-      <section
-        id="consultation"
-        className="py-24 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-800 relative overflow-hidden"
-      >
+      {/* WHAT'S INCLUDED */}
+      <section className="py-24 bg-blue-950/40">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <Badge className="mb-4 bg-cyan-500/20 text-cyan-300 border-cyan-500/30">
+                One flat rate — no surprise fees
+              </Badge>
+              <h2 className="text-3xl font-semibold mb-6 text-white">
+                Everything You Need to Launch Your US Business
+              </h2>
+              <p className="text-blue-200 mb-8 leading-relaxed">
+                You pay once. We handle formation, compliance setup, and give you the tools
+                to run your new business from day one — including AI-powered advisory built in.
+              </p>
+              <Link href="/financing">
+                <Button className="bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-semibold rounded-full px-6 py-3">
+                  See Full Pricing
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
+
+            <div className="space-y-4">
+              {included.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="text-cyan-400 mt-0.5 shrink-0 h-5 w-5" />
+                  <p className="text-blue-100 text-sm leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHO IT'S FOR */}
+      <section className="py-24 bg-slate-950">
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl font-semibold mb-4 text-white">
+            Built for Hobbyists Becoming Business Owners
+          </h2>
+          <p className="text-blue-300 mb-16 max-w-2xl mx-auto">
+            You don't need a law degree or an accountant on retainer. AERO is designed for people
+            turning their passion into income and needing a proper legal foundation to do it.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Star,
+                title: "Creators & Makers",
+                desc: "Etsy sellers, artists, crafters, and product makers who want to sell professionally and protect their personal assets.",
+              },
+              {
+                icon: Zap,
+                title: "Freelancers & Consultants",
+                desc: "Writers, designers, developers, and coaches who want to invoice clients through a legitimate US company.",
+              },
+              {
+                icon: Globe,
+                title: "International Entrepreneurs",
+                desc: "Non-US residents who want access to US payment processors, customers, and the credibility of a US-registered entity.",
+              },
+              {
+                icon: Building2,
+                title: "Side Hustle Founders",
+                desc: "Anyone running a project on the side that's generating income and ready to be structured properly.",
+              },
+              {
+                icon: Users,
+                title: "Small Teams",
+                desc: "Co-founders and small partnerships who want a clean legal structure from day one.",
+              },
+              {
+                icon: Shield,
+                title: "First-Time Business Owners",
+                desc: "People who have never formed a company before and want expert guidance every step of the way.",
+              },
+            ].map(({ icon: Icon, title, desc }) => (
+              <Card key={title} className="p-6 rounded-2xl bg-blue-900/30 border border-blue-800/40 text-left">
+                <Icon className="h-8 w-8 text-cyan-400 mb-4" />
+                <h3 className="text-white font-semibold mb-2">{title}</h3>
+                <p className="text-blue-200 text-sm leading-relaxed">{desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI TOOLS INCLUDED */}
+      <section className="py-24 bg-blue-950/40">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <Card className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/40">
+                <FileText className="h-8 w-8 text-cyan-400 mb-3" />
+                <h3 className="text-white font-semibold mb-2">AI Business Document Assistant</h3>
+                <p className="text-blue-200 text-sm">Generate contracts, invoices, client agreements, and business policies tailored to your industry.</p>
+              </Card>
+              <Card className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/40">
+                <Shield className="h-8 w-8 text-indigo-400 mb-3" />
+                <h3 className="text-white font-semibold mb-2">Compliance Monitoring</h3>
+                <p className="text-blue-200 text-sm">Stay on top of state filing deadlines, annual reports, and regulatory requirements — we track them for you.</p>
+              </Card>
+              <Card className="p-6 rounded-2xl bg-slate-800/60 border border-slate-700/40">
+                <DollarSign className="h-8 w-8 text-green-400 mb-3" />
+                <h3 className="text-white font-semibold mb-2">Business Structure Advisory</h3>
+                <p className="text-blue-200 text-sm">AI-assisted guidance on when to shift from LLC to S-Corp, how to pay yourself, and how your business income is structured.</p>
+              </Card>
+            </div>
+
+            <div>
+              <Badge className="mb-4 bg-indigo-500/20 text-indigo-300 border-indigo-500/30">
+                AI tools — included in your package
+              </Badge>
+              <h2 className="text-3xl font-semibold mb-4 text-white">
+                Your Business Runs Smarter With AI Built In
+              </h2>
+              <p className="text-blue-200 leading-relaxed mb-6">
+                Every AERO formation package includes access to our AI-powered business toolkit.
+                Get help drafting documents, staying compliant, and making informed decisions — without hiring an army of advisors.
+              </p>
+              <p className="text-blue-300 text-sm leading-relaxed">
+                Our AI advisory tools are governed by the same enterprise-grade standards we apply
+                to Fortune 500 clients — so your small business gets big-company infrastructure from day one.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-800 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl text-white mb-8">
-            Understand Your AI Risk Exposure
+          <h2 className="text-4xl md:text-5xl text-white mb-6 font-display">
+            Ready to Make It Official?
           </h2>
-          <p className="text-white/80 mb-12 text-lg max-w-2xl mx-auto">
-            Most companies don't realize how much AI is already influencing their operations.
-            We help you identify risks and put simple controls in place so you stay in control.
+          <p className="text-white/80 mb-10 text-lg max-w-2xl mx-auto">
+            One flat rate. No hidden fees. Your US business — formed, documented, and ready to operate.
           </p>
-
-          <Link href="/advisory">
-            <Button className="bg-white text-blue-800 border-white rounded-full px-8 py-4 text-lg font-semibold shadow-xl">
-              Book a Consultation
-            </Button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:contact@aerocooperation.com">
+              <Button className="bg-white text-blue-800 hover:bg-blue-50 border-white rounded-full px-8 py-4 text-lg font-semibold shadow-xl">
+                Start Your US Business
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </a>
+            <Link href="/advisory">
+              <Button variant="outline" className="border-white/40 text-white hover:bg-white/10 rounded-full px-8 py-4 text-lg">
+                Learn More
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
+
       <GovernanceFooter />
     </div>
   );

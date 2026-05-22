@@ -8,26 +8,26 @@ import { GovernanceFooter } from "@/components/GovernanceFooter";
 
 const pressItems = [
   {
-    outlet: "AI Governance Quarterly",
-    headline: "AERO Advisory on the EU AI Act: What Enterprises Need to Know Before 2026",
+    outlet: "Founder & Freelancer Magazine",
+    headline: "How Non-US Residents Are Quietly Building American Businesses From Abroad",
     date: "March 2026",
     type: "Feature Interview",
   },
   {
-    outlet: "Risk & Compliance Magazine",
-    headline: "Independent AI Governance Advisors Are the New CISOs",
+    outlet: "The Creator Economy Report",
+    headline: "LLC or Sole Proprietor? Why More Hobbyists Are Choosing Incorporation",
     date: "January 2026",
-    type: "Op-Ed",
-  },
-  {
-    outlet: "Financial Times (FT Adviser)",
-    headline: "How Mid-Market Firms Are Catching Up on AI Regulation",
-    date: "November 2025",
     type: "Expert Commentary",
   },
   {
-    outlet: "EU Digital Policy Forum",
-    headline: "AERO at the European AI Liability Summit: Closing the Governance Gap",
+    outlet: "Small Business Weekly",
+    headline: "AERO Advisory on the Flat-Rate Formation Model: Accessibility Over Complexity",
+    date: "November 2025",
+    type: "Op-Ed",
+  },
+  {
+    outlet: "Global Entrepreneur Summit",
+    headline: "AERO at GES 2025: Democratizing US Business Ownership for International Founders",
     date: "October 2025",
     type: "Speaking Engagement",
   },
@@ -61,7 +61,8 @@ export default function Press() {
               In the News
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              AERO Advisory contributes expert analysis on AI governance, regulatory compliance, and responsible AI deployment across leading publications and industry events.
+              AERO Advisory contributes expert commentary on US business formation, international entrepreneurship,
+              and the growing movement of creators and freelancers launching legitimate US companies.
             </p>
           </div>
 
@@ -97,7 +98,8 @@ export default function Press() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-6">
-                AERO accepts invitations to speak at conferences and industry events on AI governance, EU AI Act compliance, responsible AI deployment, and enterprise risk management.
+                AERO accepts invitations to speak at conferences, podcasts, and industry events on topics including
+                US business formation, international entrepreneurship, the creator economy, and AI tools for small businesses.
               </p>
               <div className="flex items-center gap-2 text-primary">
                 <Mail className="w-4 h-4" />
@@ -118,7 +120,8 @@ export default function Press() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-6">
-                For interviews, feature articles, expert commentary, and editorial content on AI governance topics, reach our communications team directly.
+                For interviews, feature articles, and expert commentary on US business formation for hobbyists,
+                freelancers, and international founders — reach our communications team directly.
               </p>
               <div className="flex items-center gap-2 text-primary">
                 <Mail className="w-4 h-4" />
@@ -134,7 +137,8 @@ export default function Press() {
               <Globe className="w-12 h-12 text-primary mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">Media Resources</h3>
               <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-                For press kit materials, leadership bios, background on our AI governance methodology, and other media resources, contact our press team. We aim to respond to all inquiries within 48 business hours.
+                For press kit materials, leadership bios, data on international founders forming US businesses,
+                and other media resources, contact our press team. We aim to respond to all media inquiries within 48 business hours.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Badge variant="outline" className="gap-1">
@@ -151,7 +155,7 @@ export default function Press() {
                 </Badge>
                 <Badge variant="outline" className="gap-1">
                   <FileText className="w-3 h-3" />
-                  Whitepapers
+                  Founder Guides
                 </Badge>
               </div>
             </div>

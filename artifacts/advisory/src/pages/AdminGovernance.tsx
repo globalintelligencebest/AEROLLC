@@ -9,124 +9,125 @@ import {
   Shield,
   Clock,
   RefreshCw,
+  Building2,
 } from "lucide-react";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
 
-interface GovernanceControl {
+interface FormationControl {
   id: string;
-  framework: string;
-  controlName: string;
+  category: string;
+  checkName: string;
   description: string;
-  technicalImplementation: string;
+  notes: string;
   status: string;
   lastReviewedAt?: string | Date | null;
 }
 
-const MOCK_CONTROLS: GovernanceControl[] = [
+const MOCK_CONTROLS: FormationControl[] = [
   {
-    id: "iso-1",
-    framework: "ISO42001",
-    controlName: "AI Risk Assessment Process",
-    description: "Structured assessment of AI system risks across the development lifecycle.",
-    technicalImplementation: "Quarterly risk reviews with documented scoring matrices. Risk register maintained in internal governance portal.",
+    id: "formation-1",
+    category: "ENTITY",
+    checkName: "State Filing Confirmation",
+    description: "Articles of Organization / Incorporation filed and confirmed by the Secretary of State.",
+    notes: "Document receipt logged. State confirmation number recorded. Formation documents delivered to client.",
     status: "active",
     lastReviewedAt: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
   },
   {
-    id: "iso-2",
-    framework: "ISO42001",
-    controlName: "Human Oversight Mechanism",
-    description: "All AI-generated recommendations subject to human review before action.",
-    technicalImplementation: "UI approval gates on all AI outputs. Audit trail logged per interaction. No autonomous AI-initiated actions permitted.",
-    status: "active",
-    lastReviewedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
-  },
-  {
-    id: "iso-3",
-    framework: "ISO42001",
-    controlName: "AI Lifecycle Documentation",
-    description: "Documented AI system capabilities, limitations, and deployment context.",
-    technicalImplementation: "Model cards maintained for each AI component. Version-controlled documentation in internal wiki.",
-    status: "active",
-    lastReviewedAt: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000).toISOString(),
-  },
-  {
-    id: "eu-1",
-    framework: "EU_AI_ACT",
-    controlName: "Risk Classification Register",
-    description: "AI systems classified under EU AI Act risk tiers (unacceptable/high/limited/minimal).",
-    technicalImplementation: "Advisory AI categorized as limited-risk under Article 52. Transparency disclosures in place for all user-facing AI interactions.",
-    status: "active",
-    lastReviewedAt: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000).toISOString(),
-  },
-  {
-    id: "eu-2",
-    framework: "EU_AI_ACT",
-    controlName: "Transparency Obligation",
-    description: "Users informed when interacting with AI-generated content per Article 52.",
-    technicalImplementation: "In-UI disclosure labels on AI-generated advisory text. System messages identify AI involvement at session start.",
+    id: "formation-2",
+    category: "ENTITY",
+    checkName: "EIN Application Status",
+    description: "Employer Identification Number applied for and received from the IRS.",
+    notes: "IRS Form SS-4 submitted. EIN confirmation letter received and delivered to client. Banking-ready.",
     status: "active",
     lastReviewedAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
   },
   {
-    id: "eu-3",
-    framework: "EU_AI_ACT",
-    controlName: "Technical Documentation",
-    description: "Maintained technical documentation for AI system capabilities and limitations.",
-    technicalImplementation: "Internal documentation covers model selection rationale, input/output specifications, known limitations, and bias testing results.",
-    status: "active",
-    lastReviewedAt: null,
-  },
-  {
-    id: "gdpr-1",
-    framework: "GDPR",
-    controlName: "Data Minimization",
-    description: "Only essential personal data collected for advisory service delivery.",
-    technicalImplementation: "Data schema reviewed quarterly. Fields not required for core service are excluded. Opt-in only for optional data collection.",
+    id: "formation-3",
+    category: "ENTITY",
+    checkName: "Operating Agreement / Bylaws",
+    description: "Governing documents drafted, customized, and delivered to the client.",
+    notes: "Document customized for single-member LLC structure. Delivered via secure client portal. Signed copy received.",
     status: "active",
     lastReviewedAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString(),
   },
   {
-    id: "gdpr-2",
-    framework: "GDPR",
-    controlName: "Right to Erasure",
-    description: "Complete data deletion available through account settings and upon request.",
-    technicalImplementation: "Deletion workflow cascades across all data stores. Completion confirmed within 30 days. Deletion log retained for compliance audit.",
+    id: "compliance-1",
+    category: "COMPLIANCE",
+    checkName: "Registered Agent Activated",
+    description: "Registered agent service active and confirmed in the formation state.",
+    notes: "First year included in package. Agent address confirmed in state records. Renewal date logged in compliance calendar.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "compliance-2",
+    category: "COMPLIANCE",
+    checkName: "Compliance Calendar Delivered",
+    description: "Client has received their compliance calendar with all key state and federal deadlines.",
+    notes: "Calendar includes annual report date, franchise tax deadline, registered agent renewal, and BOI filing status.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "compliance-3",
+    category: "COMPLIANCE",
+    checkName: "BOI Report (FinCEN)",
+    description: "Beneficial Ownership Information report filed with FinCEN per Corporate Transparency Act.",
+    notes: "Report filed within 90 days of formation for new entities. Confirmation reference number on file.",
+    status: "active",
+    lastReviewedAt: null,
+  },
+  {
+    id: "banking-1",
+    category: "BANKING",
+    checkName: "Banking Introduction Completed",
+    description: "Client provided with banking options and document checklist for account opening.",
+    notes: "Recommended Mercury and Relay for non-resident clients. Document checklist sent. Follow-up call scheduled.",
+    status: "active",
+    lastReviewedAt: new Date(Date.now() - 40 * 24 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: "banking-2",
+    category: "BANKING",
+    checkName: "Account Opening Confirmed",
+    description: "Client confirms US business bank account has been successfully opened.",
+    notes: "Confirmation received from client. Business banking milestone marked complete in CRM.",
     status: "active",
     lastReviewedAt: new Date(Date.now() - 95 * 24 * 60 * 60 * 1000).toISOString(),
   },
   {
-    id: "internal-1",
-    framework: "INTERNAL",
-    controlName: "AI Decision Logging",
-    description: "All AI interactions logged with confidence scores for auditability.",
-    technicalImplementation: "Structured JSON audit logs per AI request. Logs include prompt hash, model version, confidence score, and user action outcome.",
+    id: "ai-1",
+    category: "AI_TOOLS",
+    checkName: "AI Toolkit Access Granted",
+    description: "Client provisioned with access to AERO's AI business document toolkit.",
+    notes: "Login credentials delivered. Onboarding guide sent. First document generation confirmed working.",
     status: "active",
     lastReviewedAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
   },
   {
-    id: "internal-2",
-    framework: "INTERNAL",
-    controlName: "Quarterly Model Performance Review",
-    description: "Periodic evaluation of AI model outputs for accuracy, fairness, and drift.",
-    technicalImplementation: "Cross-functional review team assesses sample outputs. Bias testing on demographic subgroups. Results documented and acted upon within 30 days.",
+    id: "ai-2",
+    category: "AI_TOOLS",
+    checkName: "AI Governance Briefing",
+    description: "Client informed about AI tool usage obligations and included advisory access.",
+    notes: "Briefing document sent covering FTC AI disclosure guidelines and EU AI Act relevance for their business type.",
     status: "active",
     lastReviewedAt: null,
   },
 ];
 
-const frameworkLabels: Record<string, string> = {
-  ISO42001: "ISO/IEC 42001",
-  EU_AI_ACT: "EU AI Act",
-  GDPR: "GDPR",
-  INTERNAL: "Internal",
+const categoryLabels: Record<string, string> = {
+  ENTITY: "Entity Formation",
+  COMPLIANCE: "Compliance Setup",
+  BANKING: "Banking",
+  AI_TOOLS: "AI Tools & Advisory",
 };
 
-const frameworkColors: Record<string, string> = {
-  ISO42001: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
-  EU_AI_ACT: "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300",
-  GDPR: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300",
-  INTERNAL: "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300",
+const categoryColors: Record<string, string> = {
+  ENTITY: "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300",
+  COMPLIANCE: "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300",
+  BANKING: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300",
+  AI_TOOLS: "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300",
 };
 
 function formatDate(date: string | Date | null | undefined): string {
@@ -150,7 +151,7 @@ function daysSince(date: string | Date | null | undefined): number | null {
 
 export default function AdminGovernance() {
   const { toast } = useToast();
-  const [controls, setControls] = useState<GovernanceControl[]>(MOCK_CONTROLS);
+  const [controls, setControls] = useState<FormationControl[]>(MOCK_CONTROLS);
 
   const markReviewed = (id: string) => {
     setControls((prev) =>
@@ -158,12 +159,12 @@ export default function AdminGovernance() {
         ctrl.id === id ? { ...ctrl, lastReviewedAt: new Date().toISOString() } : ctrl
       )
     );
-    toast({ title: "Control Reviewed", description: "Last reviewed timestamp updated." });
+    toast({ title: "Checklist Item Reviewed", description: "Last reviewed timestamp updated." });
   };
 
-  const grouped = controls.reduce<Record<string, GovernanceControl[]>>((acc, ctrl) => {
-    if (!acc[ctrl.framework]) acc[ctrl.framework] = [];
-    acc[ctrl.framework].push(ctrl);
+  const grouped = controls.reduce<Record<string, FormationControl[]>>((acc, ctrl) => {
+    if (!acc[ctrl.category]) acc[ctrl.category] = [];
+    acc[ctrl.category].push(ctrl);
     return acc;
   }, {});
 
@@ -176,13 +177,16 @@ export default function AdminGovernance() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 space-y-8" data-testid="page-admin-governance">
-      <div>
-        <h1 className="text-3xl font-display font-semibold" data-testid="text-governance-title">
-          Governance Control Register
-        </h1>
-        <p className="text-muted-foreground mt-1">
-          Internal compliance dashboard for security and AI governance controls.
-        </p>
+      <div className="flex items-center gap-3">
+        <Building2 className="h-8 w-8 text-primary" />
+        <div>
+          <h1 className="text-3xl font-display font-semibold" data-testid="text-governance-title">
+            Formation Checklist Dashboard
+          </h1>
+          <p className="text-muted-foreground mt-1">
+            Internal client onboarding and formation checklist tracker.
+          </p>
+        </div>
       </div>
 
       <div className="grid gap-4 md:grid-cols-3">
@@ -192,7 +196,7 @@ export default function AdminGovernance() {
               <Shield className="h-8 w-8 text-primary" />
               <div>
                 <p className="text-2xl font-bold">{totalControls}</p>
-                <p className="text-sm text-muted-foreground">Total Controls</p>
+                <p className="text-sm text-muted-foreground">Total Checklist Items</p>
               </div>
             </div>
           </CardContent>
@@ -203,7 +207,7 @@ export default function AdminGovernance() {
               <CheckCircle2 className="h-8 w-8 text-green-600" />
               <div>
                 <p className="text-2xl font-bold">{activeControls}</p>
-                <p className="text-sm text-muted-foreground">Active</p>
+                <p className="text-sm text-muted-foreground">Active / Complete</p>
               </div>
             </div>
           </CardContent>
@@ -221,35 +225,35 @@ export default function AdminGovernance() {
         </Card>
       </div>
 
-      {Object.entries(grouped).map(([framework, frameworkControls]) => (
-        <div key={framework} className="space-y-4">
-          <h2 className="text-xl font-semibold flex items-center gap-2" data-testid={`text-framework-${framework}`}>
-            <Badge className={`${frameworkColors[framework] || ""} border-0`}>
-              {frameworkLabels[framework] || framework}
+      {Object.entries(grouped).map(([category, categoryControls]) => (
+        <div key={category} className="space-y-4">
+          <h2 className="text-xl font-semibold flex items-center gap-2" data-testid={`text-framework-${category}`}>
+            <Badge className={`${categoryColors[category] || ""} border-0`}>
+              {categoryLabels[category] || category}
             </Badge>
           </h2>
 
           <div className="grid gap-4">
-            {frameworkControls.map((ctrl) => {
+            {categoryControls.map((ctrl) => {
               const days = daysSince(ctrl.lastReviewedAt);
               const stale = days === null || days > 90;
               return (
                 <Card key={ctrl.id} className="overflow-visible" data-testid={`card-control-${ctrl.id}`}>
                   <CardHeader className="pb-2 flex flex-row items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
-                      <CardTitle className="text-base">{ctrl.controlName}</CardTitle>
+                      <CardTitle className="text-base">{ctrl.checkName}</CardTitle>
                       <p className="text-sm text-muted-foreground mt-1">{ctrl.description}</p>
                     </div>
                     <Badge
                       variant={ctrl.status === "active" ? "default" : "destructive"}
                       data-testid={`badge-status-${ctrl.id}`}
                     >
-                      {ctrl.status === "active" ? "Active" : "Review Required"}
+                      {ctrl.status === "active" ? "Complete" : "Pending"}
                     </Badge>
                   </CardHeader>
                   <CardContent>
                     <div className="bg-muted/50 rounded-md p-3 text-xs font-mono text-muted-foreground mb-3" data-testid={`text-implementation-${ctrl.id}`}>
-                      {ctrl.technicalImplementation}
+                      {ctrl.notes}
                     </div>
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground" data-testid={`text-reviewed-${ctrl.id}`}>

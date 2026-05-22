@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Landmark, CheckCircle2, Shield, FileText, Users, Lock, Globe, BarChart3 } from "lucide-react";
+import { ArrowRight, Landmark, CheckCircle2, Shield, FileText, Users, Globe, BarChart3, Building2, DollarSign } from "lucide-react";
 import aeroLogoBlue from "@/assets/aero_logo_blue.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
@@ -17,8 +17,8 @@ export default function GovernmentPage() {
           <div className="flex items-center gap-6">
             <Link href="/" className="text-sm font-medium text-foreground/70 hover:text-foreground hidden md:block">Home</Link>
             <Button asChild data-testid="button-get-started">
-              <a href="mailto:government@aerocooperation.com">
-                Get in Touch
+              <a href="mailto:contact@aerocooperation.com">
+                Get Started
               </a>
             </Button>
           </div>
@@ -30,63 +30,64 @@ export default function GovernmentPage() {
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">
               <Landmark className="w-3 h-3 mr-1" />
-              For Government Agencies
+              US Regulatory Guide
             </Badge>
             <h1 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">
-              AI Governance for the Public Sector
+              Understanding the US Business Landscape
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              AERO helps government ministries, agencies, and regulatory bodies develop responsible AI frameworks that align with democratic values and public accountability.
+              Forming a business in the United States involves federal agencies, state governments,
+              and specific rules depending on your entity type and industry. Here's what you need to know.
             </p>
           </div>
 
-          {/* Key Concerns */}
+          {/* Key Entities */}
           <div className="grid md:grid-cols-4 gap-6 mb-16">
             <Card className="p-6 text-center bg-[#1E3A8A] text-white">
               <Shield className="w-8 h-8 mx-auto mb-3 opacity-80" />
-              <div className="text-3xl font-bold mb-1">EU AI Act</div>
-              <div className="text-sm text-white/70">Compliance Ready</div>
+              <div className="text-2xl font-bold mb-1">IRS</div>
+              <div className="text-sm text-white/70">Federal Tax Authority</div>
             </Card>
             <Card className="p-6 text-center bg-[#1E3A8A] text-white">
               <FileText className="w-8 h-8 mx-auto mb-3 opacity-80" />
-              <div className="text-3xl font-bold mb-1">ISO 42001</div>
-              <div className="text-sm text-white/70">Framework Alignment</div>
+              <div className="text-2xl font-bold mb-1">Secretary of State</div>
+              <div className="text-sm text-white/70">Entity Registration</div>
             </Card>
             <Card className="p-6 text-center bg-[#1E3A8A] text-white">
-              <Lock className="w-8 h-8 mx-auto mb-3 opacity-80" />
-              <div className="text-3xl font-bold mb-1">GDPR</div>
-              <div className="text-sm text-white/70">Privacy by Design</div>
+              <Building2 className="w-8 h-8 mx-auto mb-3 opacity-80" />
+              <div className="text-2xl font-bold mb-1">FinCEN</div>
+              <div className="text-sm text-white/70">Beneficial Ownership</div>
             </Card>
             <Card className="p-6 text-center bg-[#1E3A8A] text-white">
               <Globe className="w-8 h-8 mx-auto mb-3 opacity-80" />
-              <div className="text-3xl font-bold mb-1">NIST AI RMF</div>
-              <div className="text-sm text-white/70">Risk Management</div>
+              <div className="text-2xl font-bold mb-1">50 States</div>
+              <div className="text-sm text-white/70">Varying Requirements</div>
             </Card>
           </div>
 
-          {/* Public Sector Challenges */}
+          {/* The Formation Process */}
           <div className="mb-16">
-            <h2 className="text-2xl font-semibold mb-8 text-center">The Public Sector AI Challenge</h2>
+            <h2 className="text-2xl font-semibold mb-8 text-center">The US Formation Process — Simplified</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <BarChart3 className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Where Governments Struggle</h3>
+                  <h3 className="text-xl font-semibold">Federal Requirements</h3>
                 </div>
                 <div className="space-y-4">
                   {[
-                    { label: "AI systems deployed without documented risk assessments", pct: "72%" },
-                    { label: "Lack of cross-departmental AI oversight structures", pct: "65%" },
-                    { label: "Insufficient explainability documentation", pct: "80%" },
-                    { label: "No formal human oversight protocols for AI decisions", pct: "58%" },
-                  ].map(({ label, pct }) => (
+                    { label: "EIN (Employer Identification Number)", note: "Issued by the IRS — your business tax ID, required for banking and taxes" },
+                    { label: "Beneficial Ownership Report (BOI)", note: "Required for most LLCs/Corps under FinCEN's 2024 Corporate Transparency Act" },
+                    { label: "Annual Federal Tax Filing", note: "LLC: pass-through to personal return; C-Corp: separate corporate return" },
+                    { label: "No Federal Registration for the Entity", note: "Companies are formed at the state level — federal only handles tax IDs and reporting" },
+                  ].map(({ label, note }) => (
                     <div key={label}>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-muted-foreground">{label}</span>
-                        <span className="font-medium">{pct}</span>
-                      </div>
-                      <div className="h-2.5 bg-muted rounded-full overflow-hidden">
-                        <div className="h-full bg-primary rounded-full" style={{ width: pct }}></div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-600 mt-1 shrink-0" />
+                        <div>
+                          <p className="font-medium text-sm">{label}</p>
+                          <p className="text-xs text-muted-foreground">{note}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -96,14 +97,14 @@ export default function GovernmentPage() {
               <Card className="p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <Users className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-semibold">High-Stakes AI Use Cases</h3>
+                  <h3 className="text-xl font-semibold">State Requirements</h3>
                 </div>
                 <div className="space-y-4">
                   {[
-                    { title: "Benefits & Eligibility Decisions", desc: "AI systems determining social benefit access require robust fairness and appeals frameworks." },
-                    { title: "Law Enforcement & Predictive Tools", desc: "High-risk AI systems under EU AI Act Article 6 require mandatory conformity assessments." },
-                    { title: "Healthcare & Clinical AI", desc: "Patient-impacting AI must meet both AI Act and GDPR requirements for data use." },
-                    { title: "Border Control & Biometrics", desc: "Biometric categorization systems face strictest EU AI Act prohibitions and restrictions." },
+                    { title: "Articles of Organization / Incorporation", desc: "Filed with the Secretary of State in your chosen formation state." },
+                    { title: "Registered Agent", desc: "A person or service with a physical address in the state — required in every state." },
+                    { title: "Annual Reports & Franchise Taxes", desc: "Due annually — deadlines and amounts vary by state. Missing them can lead to dissolution." },
+                    { title: "State Business Licenses", desc: "Depending on your industry and state, additional licenses may be required." },
                   ].map(({ title, desc }) => (
                     <div key={title} className="flex items-start gap-3">
                       <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
@@ -118,92 +119,133 @@ export default function GovernmentPage() {
             </div>
           </div>
 
-          {/* Growing Regulatory Pressure */}
+          {/* LLC vs C-Corp */}
           <Card className="p-8 mb-16 bg-muted/30 border-0">
-            <h3 className="text-xl font-semibold mb-6 text-center">The Regulatory Timeline</h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">Aug 2026</div>
-                <p className="text-sm text-muted-foreground">EU AI Act full application — high-risk systems must be compliant or face penalties up to €30M</p>
+            <h3 className="text-xl font-semibold mb-6 text-center">LLC vs C-Corporation — Which Is Right for You?</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-semibold mb-4 text-primary">LLC (Limited Liability Company)</h4>
+                <ul className="space-y-3">
+                  {[
+                    "Simpler to set up and maintain",
+                    "Pass-through taxation — profits go to your personal return",
+                    "Flexible management structure",
+                    "Great for solo founders, freelancers, and small teams",
+                    "Popular in Wyoming (privacy) and Delaware (credibility)",
+                    "Can elect S-Corp tax status for additional savings",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">72h</div>
-                <p className="text-sm text-muted-foreground">Maximum window to report serious AI incidents to national supervisory authorities</p>
+              <div>
+                <h4 className="font-semibold mb-4 text-primary">C-Corporation</h4>
+                <ul className="space-y-3">
+                  {[
+                    "Preferred by venture capital investors",
+                    "Separate corporate tax return (21% federal rate)",
+                    "Can issue multiple classes of stock",
+                    "Required for equity-based fundraising",
+                    "Delaware is the dominant state for C-Corps",
+                    "More formal governance requirements (bylaws, board)",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-primary mb-2">4%</div>
-                <p className="text-sm text-muted-foreground">Global annual turnover penalty risk for deploying non-compliant high-risk AI systems</p>
+            </div>
+            <p className="text-center text-sm text-muted-foreground mt-8 italic">
+              Not sure which to choose? AERO advises you on the right structure based on your goals, income, and future plans.
+            </p>
+          </Card>
+
+          {/* State Comparison */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-semibold mb-8 text-center">Popular Formation States Compared</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  state: "Delaware",
+                  flag: "🏛️",
+                  bestFor: "C-Corps, investor-backed startups",
+                  annualFee: "$300 franchise tax (min.)",
+                  privacy: "Moderate",
+                  notes: "Gold standard for startups seeking investment. Court of Chancery specializes in corporate law.",
+                },
+                {
+                  state: "Wyoming",
+                  flag: "🏔️",
+                  bestFor: "LLCs, privacy-conscious founders",
+                  annualFee: "$60 minimum",
+                  privacy: "High",
+                  notes: "Strong owner privacy protections. No state income tax. Very low annual fees. Popular for non-residents.",
+                },
+                {
+                  state: "Florida",
+                  flag: "🌴",
+                  bestFor: "Owners who operate in the US",
+                  annualFee: "$138.75",
+                  privacy: "Moderate",
+                  notes: "No state income tax. Good for owners who spend time in Florida or plan to operate there.",
+                },
+              ].map(({ state, flag, bestFor, annualFee, privacy, notes }) => (
+                <Card key={state} className="p-6">
+                  <div className="text-3xl mb-3">{flag}</div>
+                  <h4 className="text-xl font-bold mb-1">{state}</h4>
+                  <p className="text-sm text-primary font-medium mb-4">{bestFor}</p>
+                  <div className="space-y-2 text-sm text-muted-foreground mb-4">
+                    <div className="flex justify-between">
+                      <span>Annual Fee</span>
+                      <span className="font-medium text-foreground">{annualFee}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Privacy</span>
+                      <span className="font-medium text-foreground">{privacy}</span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-muted-foreground">{notes}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* New in 2024: BOI */}
+          <Card className="p-8 mb-16 border-amber-200 bg-amber-50">
+            <div className="flex items-start gap-4">
+              <DollarSign className="w-6 h-6 text-amber-600 mt-0.5 shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-amber-900">New Requirement: Beneficial Ownership Report (BOI)</h3>
+                <p className="text-amber-800 text-sm mb-4">
+                  Under the Corporate Transparency Act, most US LLCs and corporations must file a Beneficial
+                  Ownership Information (BOI) report with FinCEN (the Financial Crimes Enforcement Network).
+                  This applies to most new and existing small businesses. Failure to file can result in penalties.
+                </p>
+                <ul className="space-y-1 text-sm text-amber-700">
+                  <li>• Companies formed in 2024 or later: file within 90 days of formation</li>
+                  <li>• Companies formed before 2024: filing requirements vary — check current FinCEN guidance</li>
+                  <li>• AERO guides you through BOI reporting as part of your formation package</li>
+                </ul>
               </div>
             </div>
           </Card>
 
-          {/* How AERO Helps */}
-          <div className="mb-16">
-            <h2 className="text-2xl font-semibold mb-8 text-center">How AERO Supports Government Agencies</h2>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                {[
-                  {
-                    title: "AI Inventory & Risk Classification",
-                    desc: "We document every AI system in use across your agency, classify risk levels under EU AI Act criteria, and prioritize compliance actions.",
-                  },
-                  {
-                    title: "Policy & Governance Framework Design",
-                    desc: "We design AI governance policies tailored to public sector accountability requirements, FOI obligations, and democratic oversight principles.",
-                  },
-                  {
-                    title: "Procurement Guidance",
-                    desc: "Vendor assessment frameworks ensure every AI system you procure meets your governance standards before deployment.",
-                  },
-                  {
-                    title: "Staff & Leadership Training",
-                    desc: "Executive briefings and department-level workshops build internal AI literacy aligned with your regulatory obligations.",
-                  },
-                ].map(({ title, desc }) => (
-                  <div key={title} className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="h-5 w-5 text-green-600" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-lg">{title}</p>
-                      <p className="text-muted-foreground">{desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <Card className="p-8 bg-[#1E3A8A] text-white">
-                <h3 className="text-2xl font-semibold mb-6">AERO Government Engagements Include</h3>
-                <div className="space-y-4 text-white/80">
-                  {[
-                    "EU AI Act readiness assessments for national agencies",
-                    "ISO/IEC 42001 certification pathway support",
-                    "Fundamental rights impact assessment design",
-                    "AI oversight committee structuring",
-                    "Cross-departmental governance coordination",
-                    "Incident response & reporting protocol design",
-                    "Procurement framework review and AI supplier vetting",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <span className="text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-            </div>
-          </div>
-
           {/* CTA */}
           <div className="text-center bg-muted/30 rounded-2xl p-12">
             <Globe className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h2 className="text-2xl font-semibold mb-4">Partner With AERO</h2>
+            <h2 className="text-2xl font-semibold mb-4">Let Us Navigate This For You</h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              Work with our team of AI governance specialists to build a compliant, accountable, and trustworthy AI environment across your agency.
+              US formation rules are complex and vary by state. AERO handles every step —
+              so you spend your energy building your business, not reading government instructions.
             </p>
-            <Button size="lg" className="h-12 px-8" asChild>
-              <a href="mailto:government@aerocooperation.com">
-                Contact Government Relations
+            <Button size="lg" className="h-12 px-8 rounded-full" asChild>
+              <a href="mailto:contact@aerocooperation.com">
+                Start My US Business
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>

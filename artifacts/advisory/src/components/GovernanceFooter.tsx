@@ -12,10 +12,10 @@ export function GovernanceFooter() {
           <div className="space-y-4">
             <img src={aeroLogoWhite} alt="AERO" className="h-10 mb-2" />
             <p className="text-sm text-white/70 leading-relaxed">
-              Empowering global companies with transparent, reliable AI governance.
+              Helping hobbyists, creators, and freelancers launch their US business — with everything handled at one flat rate.
             </p>
             <p className="text-xs text-white/50 leading-relaxed">
-              AERO Advisory offers executive and office training on AI to familiarize company staff with the latest AI developments and best practices.
+              AERO also provides AI governance advisory included in every formation package, keeping your business compliant as AI regulations evolve.
             </p>
           </div>
 
@@ -30,7 +30,7 @@ export function GovernanceFooter() {
               </li>
               <li>
                 <Link href="/financing" className="hover:text-white transition-colors" data-testid="link-gov-financing">
-                  Financing
+                  Pricing
                 </Link>
               </li>
               <li>
@@ -44,9 +44,9 @@ export function GovernanceFooter() {
                 </Link>
               </li>
               <li className="pt-2">
-                <div className="text-xs text-white/40 mb-2">Organizations</div>
+                <div className="text-xs text-white/40 mb-2">Trusted by founders from</div>
                 <div className="flex flex-wrap gap-2 text-xs text-white/50">
-                  {["McKinsey", "Deloitte", "Chanel", "Bang & Olufsen", "Columbia University"].map((org) => (
+                  {["Etsy", "Fiverr", "Upwork", "Shopify", "YouTube"].map((org) => (
                     <span
                       key={org}
                       className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-white/60 text-xs"
@@ -105,22 +105,22 @@ export function GovernanceFooter() {
               </li>
               <li>
                 <a
-                  href="mailto:careers@aerocooperation.com?subject=AI%20Governance%20Advisor%20Application"
+                  href="mailto:careers@aerocooperation.com?subject=Business%20Formation%20Advisor%20Application"
                   className="flex items-center gap-1.5 hover:text-white transition-colors"
                   data-testid="link-gov-careers-advisor"
                 >
                   <Briefcase className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                  AI Governance Advisors
+                  Business Formation Advisors
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:careers@aerocooperation.com?subject=AI%20Risk%20Specialist%20Application"
+                  href="mailto:careers@aerocooperation.com?subject=Compliance%20Specialist%20Application"
                   className="flex items-center gap-1.5 hover:text-white transition-colors"
                   data-testid="link-gov-careers-ai"
                 >
                   <Globe className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                  AI Risk Specialists
+                  Compliance Specialists
                 </a>
               </li>
             </ul>
@@ -142,12 +142,12 @@ export function GovernanceFooter() {
               <li className="text-white/40 text-xs mt-1">AERO Cooperation</li>
               <li className="pt-2">
                 <a
-                  href="mailto:contact@aerocooperation.com?subject=Getting%20Started"
+                  href="mailto:contact@aerocooperation.com?subject=Start%20My%20US%20Business"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-white/20 text-xs text-white/70 hover:text-white hover:border-white/40 transition-colors"
                   data-testid="button-gov-contact-leadership"
                 >
                   <Mail className="w-3.5 h-3.5 text-blue-400" />
-                  Contact Us
+                  Start My US Business
                 </a>
               </li>
             </ul>
@@ -157,7 +157,7 @@ export function GovernanceFooter() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-white/40">
-              AERO Advisory · AI Governance &amp; Compliance Solutions
+              AERO Advisory · US Business Formation &amp; AI Governance
             </p>
             <div className="flex items-center gap-4 text-xs text-white/40">
               <span>© {new Date().getFullYear()} AERO Cooperation. All rights reserved.</span>

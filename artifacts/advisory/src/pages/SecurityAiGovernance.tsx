@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import {
   Shield,
   Lock,
-  Scale,
   Database,
   FileText,
   Eye,
@@ -14,55 +13,57 @@ import {
   Brain,
   KeyRound,
   ClipboardCheck,
+  Zap,
+  Building2,
 } from "lucide-react";
 import aeroLogoWhite from "@/assets/aero_logo_white.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
 
-const frameworks = [
+const aiTools = [
   {
-    icon: Scale,
-    title: "ISO/IEC 42001 Alignment",
-    badge: "AI Management System",
+    icon: FileText,
+    title: "Business Document Generator",
+    badge: "Included in Package",
     description:
-      "AERO's internal advisory practices are designed to align with ISO/IEC 42001, the international standard for Artificial Intelligence Management Systems (AIMS). This ensures our advisory work meets the same standards we recommend to clients.",
+      "AI-assisted drafting of the core documents every new business needs — from client contracts to privacy policies, service agreements, and non-disclosure agreements. Tailored to your industry and state.",
     points: [
-      "Structured AI risk assessment methodology for all advisory engagements",
-      "Human oversight protocols for all AI-assisted analysis outputs",
-      "Continuous monitoring and improvement of advisory AI tool performance",
-      "Documented AI lifecycle management from selection to retirement",
-      "Stakeholder communication and transparency requirements",
-      "Regular internal audits of AI-assisted advisory processes",
+      "Client service agreements and contracts",
+      "Privacy policy and terms of service",
+      "Non-disclosure agreements (NDAs)",
+      "Contractor and freelancer agreements",
+      "Invoice templates and payment terms",
+      "Basic employee or team agreements",
     ],
   },
   {
     icon: Globe,
-    title: "EU AI Act Compliance",
-    badge: "Regulatory Alignment",
+    title: "Compliance Monitoring Dashboard",
+    badge: "Included in Package",
     description:
-      "As an advisor to organizations navigating the EU AI Act, AERO proactively maintains its own EU AI Act compliance posture. Our practices reflect the same standards we help our clients implement.",
+      "A simple AI-powered tool that tracks your company's compliance obligations — state annual reports, registered agent renewals, franchise taxes, and federal filings — and sends you reminders before deadlines.",
     points: [
-      "AI system inventory maintained for all AI tools used in advisory delivery",
-      "Risk classification applied to each AI system under EU AI Act criteria",
-      "Transparency obligations: clients informed when AI-assisted analysis is used",
-      "Human oversight (Article 14): all AI-assisted outputs reviewed by qualified advisors",
-      "Data governance: training data quality and bias monitoring for AI tools",
-      "Technical documentation maintained for all AI systems in use",
+      "State annual report deadlines and instructions",
+      "Franchise tax schedules by state",
+      "Registered agent renewal reminders",
+      "BOI (Beneficial Ownership) filing status",
+      "Federal tax estimate calendar",
+      "State license renewal tracking (if applicable)",
     ],
   },
   {
-    icon: Shield,
-    title: "GDPR Data Protection",
-    badge: "Privacy by Design",
+    icon: Brain,
+    title: "AI Governance Advisory for Small Business",
+    badge: "Included in Package",
     description:
-      "AERO implements GDPR-compliant data protection practices as a foundational principle, ensuring client data is handled with the highest standards of confidentiality, integrity, and security.",
+      "As your business grows and you adopt AI tools (ChatGPT, automation, AI-powered software), our advisory guidance helps you understand your obligations. AI regulations are evolving — we keep you ahead of them.",
     points: [
-      "Data minimization: only data necessary for the advisory engagement is collected",
-      "Purpose limitation: client data processed solely for agreed advisory purposes",
-      "Storage limitation: engagement data retained per contractually agreed schedules",
-      "Right to erasure: complete client data deletion available upon request",
-      "Data portability: client deliverables and data provided in portable formats",
-      "Privacy by design: end-to-end encryption for all client document handling",
+      "Guidance on AI disclosure obligations to clients",
+      "AI tool usage policies for your business",
+      "Data privacy considerations when using AI",
+      "US and international AI regulatory updates",
+      "When and how to document your use of AI",
+      "Consumer protection considerations for AI-generated content",
     ],
   },
 ];
@@ -70,46 +71,46 @@ const frameworks = [
 const securityControls = [
   {
     icon: KeyRound,
-    title: "Access & Authentication",
+    title: "Client Data Security",
     items: [
-      "Multi-factor authentication required for all AERO staff systems",
-      "Role-based access control for client engagement data",
-      "Privileged access reviews conducted quarterly",
-      "Zero-trust network access for remote advisory team",
-      "Credential vaulting with hardware security key support",
+      "End-to-end encryption for all client documents and formation data",
+      "Role-based access — your files accessible only to your account",
+      "Multi-factor authentication on all AERO staff and client portals",
+      "Secure document delivery and digital signature support",
+      "Automatic data deletion upon client request",
     ],
   },
   {
     icon: AlertTriangle,
-    title: "Threat Detection & Monitoring",
+    title: "Platform & Infrastructure",
     items: [
-      "Continuous security monitoring of advisory platforms and data stores",
-      "Anomaly detection for unusual data access patterns",
-      "Security incident response plan with defined escalation paths",
-      "Quarterly vulnerability assessments and penetration testing",
-      "Supplier and vendor security risk reviews",
+      "Continuous security monitoring of all AERO systems",
+      "Regular penetration testing and vulnerability assessments",
+      "Incident response plan with defined escalation paths",
+      "Third-party vendor security reviews for all sub-processors",
+      "System redundancy and disaster recovery protocols",
     ],
   },
   {
     icon: Lock,
-    title: "Data Protection Controls",
+    title: "Data Protection",
     items: [
-      "Encryption at rest and in transit for all client data",
-      "Secure document handling with access-controlled client portals",
-      "Client data segmentation to prevent cross-engagement exposure",
-      "Secure deletion procedures for engagement data at project close",
-      "DLP controls preventing unauthorized exfiltration of client information",
+      "Client data never used to train AI models",
+      "No sharing of client information with third parties without consent",
+      "Data stored in jurisdictions with strong privacy protections",
+      "Secure deletion procedures upon engagement close",
+      "DLP controls preventing unauthorized data exfiltration",
     ],
   },
   {
     icon: Database,
-    title: "Data Governance",
+    title: "Compliance Standards",
     items: [
-      "Client data classification policy (confidential, restricted, internal)",
-      "Data retention schedules aligned to contractual and legal obligations",
-      "Processing records maintained per GDPR Article 30",
-      "Third-party data processor agreements in place for all sub-processors",
-      "Annual data protection impact assessments for high-risk processing",
+      "GDPR-aligned data handling practices",
+      "CCPA compliance for California-resident clients",
+      "Processing records maintained per Article 30",
+      "Annual data protection assessments",
+      "Client data portability available at any time",
     ],
   },
 ];
@@ -123,51 +124,57 @@ export default function SecurityAiGovernance() {
             <img src={aeroLogoWhite} alt="AERO" className="h-12" />
           </Link>
           <div className="hidden md:flex gap-6 text-sm font-medium">
-            <a href="#frameworks" className="text-white/70 hover:text-white transition-colors">Frameworks</a>
-            <a href="#security" className="text-white/70 hover:text-white transition-colors">Security Controls</a>
-            <a href="#audit" className="text-white/70 hover:text-white transition-colors">Audit Logging</a>
-            <a href="#ai-governance" className="text-white/70 hover:text-white transition-colors">AI Governance</a>
+            <a href="#ai-tools" className="text-white/70 hover:text-white transition-colors">AI Tools</a>
+            <a href="#security" className="text-white/70 hover:text-white transition-colors">Security</a>
+            <a href="#governance" className="text-white/70 hover:text-white transition-colors">Governance</a>
           </div>
+          <Button asChild className="bg-white text-blue-900 hover:bg-blue-50 rounded-full px-5 text-sm font-semibold">
+            <a href="mailto:contact@aerocooperation.com">Get Started</a>
+          </Button>
         </div>
       </nav>
 
-      <section className="py-24 bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-center">
+      {/* HERO */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <Badge className="mb-6 gradient-primary text-white border-0 px-4 py-2 rounded-full" data-testid="badge-hero">
-            Security & AI Governance
+            Technology & Compliance
           </Badge>
           <h1 className="text-4xl md:text-5xl font-display mb-6" data-testid="text-hero-title">
-            Trust, Transparency & Compliance
+            AI Tools & Compliance —<br />Built Into Your Package
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed" data-testid="text-hero-description">
-            AERO Advisory maintains enterprise-grade security controls, regulatory-aligned AI governance practices,
-            and comprehensive audit capabilities — holding ourselves to the same standards we help our clients achieve.
+            Every AERO formation package includes a suite of AI-powered business tools,
+            compliance monitoring, and ongoing AI governance advisory — so your new US business
+            is set up not just legally, but technologically.
           </p>
         </div>
       </section>
 
-      <section id="frameworks" className="max-w-6xl mx-auto px-6 py-24">
+      {/* WHAT'S INCLUDED */}
+      <section id="ai-tools" className="max-w-6xl mx-auto px-6 py-24">
         <h2 className="text-3xl font-semibold mb-4 text-center" data-testid="text-frameworks-title">
-          Regulatory Framework Alignment
+          What's Included: Your AI Business Toolkit
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          AERO's internal compliance posture is designed around the same internationally recognized standards
-          and AI regulations that govern our client work.
+          These tools are included in every AERO formation package at no extra cost —
+          designed specifically for hobbyists and new business owners who need professional-grade
+          tools without enterprise pricing.
         </p>
 
         <div className="grid gap-8">
-          {frameworks.map((fw, i) => (
+          {aiTools.map((tool, i) => (
             <Card key={i} className="p-8" data-testid={`card-framework-${i}`}>
               <div className="flex flex-wrap items-start gap-4 mb-4">
-                <fw.icon className="h-8 w-8 text-primary flex-shrink-0" />
+                <tool.icon className="h-8 w-8 text-primary flex-shrink-0" />
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <h3 className="text-xl font-semibold">{fw.title}</h3>
-                    <Badge variant="secondary">{fw.badge}</Badge>
+                    <h3 className="text-xl font-semibold">{tool.title}</h3>
+                    <Badge variant="secondary" className="bg-green-100 text-green-800 border-0">{tool.badge}</Badge>
                   </div>
-                  <p className="text-muted-foreground mb-4">{fw.description}</p>
+                  <p className="text-muted-foreground mb-4">{tool.description}</p>
                   <ul className="grid gap-2 sm:grid-cols-2">
-                    {fw.points.map((point, j) => (
+                    {tool.points.map((point, j) => (
                       <li key={j} className="flex items-start gap-2 text-sm">
                         <CheckCircle2 className="h-4 w-4 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
                         <span>{point}</span>
@@ -181,13 +188,57 @@ export default function SecurityAiGovernance() {
         </div>
       </section>
 
-      <section id="security" className="bg-muted/30 dark:bg-muted/10 py-24">
+      {/* HOW AI GOVERNANCE FITS */}
+      <section className="bg-blue-950/10 py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge className="mb-4 bg-indigo-100 text-indigo-800 border-0">Why It Matters</Badge>
+              <h2 className="text-3xl font-semibold mb-4">
+                Why Small Businesses Need AI Governance Too
+              </h2>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                You might think AI governance is just for big corporations — but if you use
+                ChatGPT to write copy, an AI image generator for products, or automation tools
+                to run your shop, you're already subject to evolving AI regulations.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                The EU AI Act, FTC guidelines on AI disclosures, and state-level consumer protection
+                laws are increasingly affecting small businesses too. AERO's AI governance advisory
+                keeps you informed and compliant as these rules take shape.
+              </p>
+            </div>
+            <div className="space-y-4">
+              {[
+                { icon: Zap, title: "FTC AI Disclosure Guidelines", desc: "The FTC requires transparency when AI generates content marketed to consumers. We explain what this means for your business." },
+                { icon: Globe, title: "EU AI Act (if you sell to EU customers)", desc: "If your US business sells to EU residents, EU AI regulations may apply to your AI-generated content or automated decisions." },
+                { icon: Building2, title: "State AI Laws", desc: "Several US states are enacting their own AI transparency and consumer protection laws — we track them for you." },
+                { icon: Shield, title: "Platform Terms & AI", desc: "Marketplaces like Etsy, Amazon, and Shopify are updating their policies around AI-generated content — we keep you up to date." },
+              ].map(({ icon: Icon, title, desc }) => (
+                <Card key={title} className="p-4">
+                  <div className="flex items-start gap-3">
+                    <Icon className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-medium text-sm">{title}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{desc}</p>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECURITY CONTROLS */}
+      <section id="security" className="py-24">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-4 text-center" data-testid="text-security-title">
-            Security Controls
+            How We Protect Your Data
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Multi-layered controls protect client data, advisory platforms, and operational integrity across all AERO systems.
+            Your formation documents, EIN, and personal information are handled with enterprise-grade
+            security controls — the same standards we apply to our largest clients.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -211,111 +262,60 @@ export default function SecurityAiGovernance() {
         </div>
       </section>
 
-      <section id="audit" className="max-w-6xl mx-auto px-6 py-24">
-        <h2 className="text-3xl font-semibold mb-4 text-center" data-testid="text-audit-title">
-          Audit Logging & Accountability
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Every security-relevant action and AI-assisted advisory step is logged for forensic analysis, compliance reporting, and continuous improvement.
-        </p>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          <Card className="p-6" data-testid="card-audit-events">
-            <FileText className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Logged Events</h3>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li>Client data access and document operations</li>
-              <li>AI-assisted analysis invocations and outputs</li>
-              <li>Advisory deliverable generation and approvals</li>
-              <li>Staff authentication and privilege escalations</li>
-              <li>Data exports and client portal access</li>
-              <li>System configuration changes</li>
-              <li>Incident detection and response actions</li>
-              <li>Third-party access events</li>
-            </ul>
-          </Card>
-
-          <Card className="p-6" data-testid="card-audit-data">
-            <Eye className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Captured Data</h3>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li>Timestamp (server-generated, UTC)</li>
-              <li>User identifier (pseudonymized)</li>
-              <li>Action type and entity reference</li>
-              <li>IP address (for security investigation)</li>
-              <li>Session context and device identifier</li>
-              <li>Contextual outcome details (sanitized)</li>
-              <li>AI model version and parameters used</li>
-            </ul>
-          </Card>
-
-          <Card className="p-6" data-testid="card-audit-privacy">
-            <Shield className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Privacy Safeguards</h3>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
-              <li>Credentials and secrets never logged</li>
-              <li>Client content excluded from system-level logs</li>
-              <li>Pseudonymization applied to identifiers</li>
-              <li>Logs subject to documented retention policies</li>
-              <li>Access to audit logs restricted and monitored</li>
-              <li>Log integrity protected against tampering</li>
-              <li>GDPR Article 30 processing records maintained</li>
-            </ul>
-          </Card>
-        </div>
-      </section>
-
-      <section id="ai-governance" className="bg-muted/30 dark:bg-muted/10 py-24">
+      {/* OUR OWN AI GOVERNANCE */}
+      <section id="governance" className="bg-muted/30 dark:bg-muted/10 py-20">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-4 text-center" data-testid="text-ai-governance-title">
-            AI Governance Principles
+            How AERO Uses AI Responsibly
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            AERO's internal AI governance principles ensure every AI-assisted advisory output meets our standards
-            for transparency, accuracy, and human accountability.
+            We practice what we preach. AERO's own use of AI tools follows the same governance
+            principles we advise our clients on.
           </p>
 
           <div className="grid gap-6 md:grid-cols-2">
             <Card className="p-6" data-testid="card-ai-transparency">
               <Brain className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Transparency & Explainability</h3>
+              <h3 className="text-lg font-semibold mb-2">Transparency & Disclosure</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                Clients are clearly informed when AI tools are used in advisory analysis, research synthesis, or documentation drafting. Every AI-assisted deliverable is reviewed and validated by a qualified AERO advisor before client delivery.
+                When AI tools assist in drafting documents or generating recommendations for your formation,
+                we disclose this clearly. Every AI-assisted output is reviewed by a qualified AERO advisor before delivery.
               </p>
               <ul className="space-y-1.5 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  AI-assisted analysis disclosed in advisory deliverables
+                  AI assistance disclosed in all deliverables
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  Reasoning and evidence trails documented for recommendations
+                  Human review required before any client-facing output
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  AI tool version and configuration logged for all advisory outputs
+                  Your data never used to train AI models
                 </li>
               </ul>
             </Card>
 
             <Card className="p-6" data-testid="card-ai-oversight">
               <ClipboardCheck className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Human Oversight & Control</h3>
+              <h3 className="text-lg font-semibold mb-2">Human Control Always</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                AI tools support but do not replace AERO's qualified advisors. All advisory recommendations, risk assessments, and governance frameworks are authored and reviewed by certified human experts before delivery.
+                AI tools support but do not replace our advisors. Formation decisions, document review,
+                and client guidance are always the responsibility of a qualified human on our team.
               </p>
               <ul className="space-y-1.5 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  Qualified advisor review required for all client-facing outputs
+                  No autonomous AI decisions affecting your formation
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  AI used for research and drafting support, not final judgments
+                  All state filings reviewed by a human before submission
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 text-green-600 dark:text-green-400 mt-0.5 flex-shrink-0" />
-                  Override and correction mechanisms in place for all AI-assisted processes
+                  Override and correction mechanisms on all AI-assisted steps
                 </li>
               </ul>
             </Card>

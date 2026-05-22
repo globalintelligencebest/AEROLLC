@@ -1,10 +1,60 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Building2, Shield, Check, Info, Globe, Users, TrendingUp, Heart } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Shield,
+  Zap,
+  Building2,
+  Globe,
+  Users,
+  DollarSign,
+  Star,
+} from "lucide-react";
 import aeroLogoBlue from "@/assets/aero_logo_blue.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
+
+const packageItems = [
+  "LLC or C-Corp formation in your chosen US state",
+  "EIN (Employer Identification Number) application",
+  "Registered agent service — first year included",
+  "Operating agreement or corporate bylaws",
+  "Compliance calendar with deadline reminders",
+  "US business bank account introduction & guidance",
+  "AI-powered business document toolkit",
+  "AI governance advisory — included in your package",
+  "Post-formation advisory access (30 days)",
+  "Digital document delivery & secure storage",
+];
+
+const faqs = [
+  {
+    q: "Do I need to be a US resident to form a US company?",
+    a: "No. Non-US residents can form and own a US LLC or C-Corporation. AERO specializes in guiding international founders through this process — including the EIN application, which has additional steps for non-residents.",
+  },
+  {
+    q: "What state should I form in?",
+    a: "Delaware is the default for C-Corps (preferred by investors). Wyoming and Florida are popular for LLCs due to low fees and privacy. We'll recommend the right state based on your goals and where you do business.",
+  },
+  {
+    q: "How long does formation take?",
+    a: "Standard filing takes 5–10 business days in most states. Expedited processing is available in Delaware and Wyoming (1–3 days). EIN processing from the IRS adds 2–4 weeks for non-US applicants — we manage this for you.",
+  },
+  {
+    q: "What is a registered agent and why do I need one?",
+    a: "Every US state requires your company to have a registered agent — a person or service with a US address that receives legal and government documents on your behalf. We provide this for your first year at no extra cost.",
+  },
+  {
+    q: "What are the ongoing costs after formation?",
+    a: "State annual report fees typically range from $50–$400 depending on your state. Registered agent renewal is a separate flat fee after year one. We provide a full compliance calendar so you're never caught off guard.",
+  },
+  {
+    q: "What does 'AI governance advisory included' mean?",
+    a: "If you use AI tools in your business (ChatGPT, automation, AI-powered software), our advisory guidance helps you understand your obligations as regulations evolve. This is included in your AERO package at no extra cost.",
+  },
+];
 
 export default function FinancingPage() {
   return (
@@ -12,13 +62,14 @@ export default function FinancingPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <img src={aeroLogoBlue} alt="AERO Cooperation" className="h-16" />
+            <img src={aeroLogoBlue} alt="AERO" className="h-16" />
           </Link>
           <div className="flex items-center gap-6">
             <Link href="/" className="text-sm font-medium text-foreground/70 hover:text-foreground hidden md:block">Home</Link>
+            <Link href="/advisory" className="text-sm font-medium text-foreground/70 hover:text-foreground hidden md:block">Services</Link>
             <Button asChild data-testid="button-get-started">
               <a href="mailto:contact@aerocooperation.com">
-                Get in Touch
+                Get Started
               </a>
             </Button>
           </div>
@@ -27,156 +78,182 @@ export default function FinancingPage() {
 
       <main className="pt-32 pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+
+          {/* Header */}
+          <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">
-              <Building2 className="w-3 h-3 mr-1" />
-              Our Funding Model
+              <DollarSign className="w-3 h-3 mr-1" />
+              Pricing
             </Badge>
             <h1 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">
-              Truly Independent. Truly Neutral.
+              One Flat Rate. Everything Included.
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              AERO Advisory maintains complete independence through a funding structure that ensures our guidance is never influenced by investor pressure or commercial conflicts.
+              No hourly billing. No piecemeal add-ons. AERO bundles every step of US company
+              formation into a single transparent price — so you know exactly what you're paying
+              before we begin.
             </p>
           </div>
 
-          <Card className="p-8 md:p-12 mb-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-primary" />
-                  What We Don't Accept
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "National or sovereign wealth investments",
-                    "Private equity or venture capital",
-                    "Corporate sponsorships from AI vendors",
-                    "Political contributions",
-                    "Lobbying group funding",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                      <span className="w-2 h-2 bg-red-500 rounded-full shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          {/* Main Pricing Card */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <Card className="p-8 md:p-12 border-2 border-primary shadow-lg relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <Badge className="bg-primary text-white">Most Popular</Badge>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                  <Check className="w-5 h-5 text-primary" />
-                  Our Revenue Sources
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Enterprise AI governance advisory retainers",
-                    "Project-based risk assessment engagements",
-                    "Executive and leadership training programs",
-                    "AI policy workshop facilitation fees",
-                    "Carefully vetted neutral institutional grants",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                      <span className="w-2 h-2 bg-green-500 rounded-full shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex items-center gap-2 mb-2">
+                <Building2 className="h-6 w-6 text-primary" />
+                <h3 className="text-xl font-bold">US Business Formation Package</h3>
               </div>
-            </div>
-          </Card>
+              <p className="text-muted-foreground text-sm mb-8">
+                Complete setup for your US LLC or C-Corporation — everything from filing to first-year compliance.
+              </p>
 
-          <div className="bg-muted/30 rounded-2xl p-8 text-center mb-8">
-            <h3 className="text-xl font-semibold mb-4">A Non-Partisan Advisor for AI Governance</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-              By funding operations exclusively through direct client engagements, AERO remains independent of any technology vendor, government, or political entity. This ensures our AI governance guidance reflects best practice rather than commercial interest.
-            </p>
-            <p className="text-sm text-muted-foreground italic">
-              "The guidance we provide does not favor one AI vendor, framework, or regulatory jurisdiction over any other."
-            </p>
-          </div>
+              <div className="mb-8">
+                <span className="text-5xl font-bold">$499</span>
+                <span className="text-muted-foreground ml-2">flat rate</span>
+                <p className="text-xs text-muted-foreground mt-1">
+                  + state filing fees (vary by state, typically $50–$200)
+                </p>
+              </div>
 
-          {/* Why Independence Matters */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6 text-center">Why Independence Matters</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6 text-center">
-                <Globe className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h4 className="font-semibold mb-2">Vendor Neutrality</h4>
-                <p className="text-sm text-muted-foreground">
-                  We don't sell AI products, so our recommendations are never shaped by vendor relationships or referral incentives.
-                </p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Users className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h4 className="font-semibold mb-2">Client-First Priorities</h4>
-                <p className="text-sm text-muted-foreground">
-                  Without external investors demanding returns, every recommendation is made in the best interest of our clients' governance goals.
-                </p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
-                <h4 className="font-semibold mb-2">Trust & Transparency</h4>
-                <p className="text-sm text-muted-foreground">
-                  Our funding sources are fully transparent. Clients can trust that our AI governance guidance is unbiased and evidence-based.
-                </p>
-              </Card>
-            </div>
-          </div>
-
-          {/* Sustainable Model */}
-          <div className="bg-primary/5 rounded-2xl p-8 md:p-12 mb-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-semibold mb-4">A Sustainable Model for Long-Term Guidance</h3>
-                <p className="text-muted-foreground mb-4">
-                  AERO is built for longevity. Our revenue model ensures we can continue providing independent AI governance advisory for years to come, without the pressure of venture returns or acquisition outcomes.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2 text-muted-foreground">
-                    <TrendingUp className="w-4 h-4 text-primary mt-1 shrink-0" />
-                    Revenue directly from the organizations we advise
+              <ul className="space-y-3 mb-8">
+                {packageItems.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
+                    <span>{item}</span>
                   </li>
-                  <li className="flex items-start gap-2 text-muted-foreground">
-                    <Heart className="w-4 h-4 text-primary mt-1 shrink-0" />
-                    Incentives fully aligned with client governance outcomes
-                  </li>
-                  <li className="flex items-start gap-2 text-muted-foreground">
-                    <Shield className="w-4 h-4 text-primary mt-1 shrink-0" />
-                    No pressure to recommend any specific AI platform
-                  </li>
-                </ul>
-              </div>
-              <div className="text-center">
-                <div className="inline-block bg-white rounded-2xl p-8 shadow-sm">
-                  <div className="text-5xl font-bold text-primary mb-2">100%</div>
-                  <p className="text-muted-foreground">Client-Funded, Vendor-Neutral</p>
-                </div>
-              </div>
-            </div>
-          </div>
+                ))}
+              </ul>
 
-          <Card className="p-6 bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800 mb-8">
-            <div className="flex items-start gap-4">
-              <Info className="w-5 h-5 text-blue-600 mt-0.5 shrink-0" />
-              <div>
-                <h4 className="font-medium text-blue-900 dark:text-blue-100 mb-2">Note on Institutional Grants</h4>
-                <p className="text-sm text-blue-800 dark:text-blue-200 mb-3">
-                  In select circumstances, AERO may accept institutional grants that support AI governance research and education, provided they impose no influence on our advisory positions or client recommendations. All grant considerations undergo rigorous evaluation to ensure alignment with our independence standards.
-                </p>
-                <a href="mailto:grants@aerocooperation.com" className="text-sm text-blue-600 dark:text-blue-400 hover:underline font-medium">
-                  Contact: grants@aerocooperation.com
+              <Button className="w-full py-4 text-lg rounded-full" asChild>
+                <a href="mailto:contact@aerocooperation.com?subject=US%20Business%20Formation%20Package">
+                  Start Your Formation
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
-              </div>
+              </Button>
+            </Card>
+
+            <div className="space-y-6">
+              {/* What you avoid */}
+              <Card className="p-6">
+                <h4 className="font-semibold mb-4 flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-primary" />
+                  What You Avoid
+                </h4>
+                <ul className="space-y-3">
+                  {[
+                    "Attorney fees of $1,500–$5,000+ for basic formation",
+                    "Separate charges for EIN, registered agent, and documents",
+                    "Surprise state fees discovered mid-process",
+                    "DIY filing errors that delay your formation",
+                    "Compliance deadlines missed due to lack of guidance",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                      <span className="w-2 h-2 bg-red-400 rounded-full mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+
+              <Card className="p-6 bg-primary/5 border-primary/20">
+                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                  <Star className="w-5 h-5 text-primary" />
+                  Why Founders Choose AERO
+                </h4>
+                <blockquote className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
+                  "I'd been selling on Etsy for two years before realizing I should have a real
+                  business structure. AERO handled everything — I had my Wyoming LLC and EIN within a week."
+                </blockquote>
+                <p className="text-xs text-muted-foreground mt-3">— AERO client, craft seller turned LLC owner</p>
+              </Card>
+
+              <Card className="p-6">
+                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                  <Globe className="w-5 h-5 text-primary" />
+                  For Non-US Residents
+                </h4>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Non-resident formation includes additional EIN processing steps. AERO manages this
+                  entirely — including the IRS Form SS-4 and ITIN coordination where needed.
+                </p>
+                <span className="text-xs font-medium text-primary">No US address or SSN required</span>
+              </Card>
             </div>
+          </div>
+
+          {/* State Fees */}
+          <Card className="p-8 mb-12 bg-muted/30 border-0">
+            <h3 className="text-xl font-semibold mb-6 text-center">State Filing Fees (Approximate)</h3>
+            <div className="grid md:grid-cols-4 gap-6 text-center">
+              {[
+                { state: "Delaware", fee: "$90–$110", note: "Best for C-Corps / investors" },
+                { state: "Wyoming", fee: "$100", note: "Privacy-friendly, low annual fees" },
+                { state: "Florida", fee: "$125", note: "Popular for US-based operations" },
+                { state: "Other States", fee: "$50–$200", note: "Varies — we advise based on your needs" },
+              ].map(({ state, fee, note }) => (
+                <div key={state}>
+                  <p className="text-2xl font-bold text-primary mb-1">{fee}</p>
+                  <p className="font-medium">{state}</p>
+                  <p className="text-xs text-muted-foreground">{note}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-xs text-muted-foreground mt-6">
+              State fees are paid at cost — AERO charges no markup on government filing fees.
+            </p>
           </Card>
 
-          <div className="text-center mt-12">
-            <Button size="lg" className="h-12 px-8" asChild>
-              <a href="mailto:contact@aerocooperation.com">
-                Get in Touch
+          {/* What's covered long-term */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <Card className="p-6 text-center">
+              <Zap className="w-10 h-10 text-primary mx-auto mb-4" />
+              <h4 className="font-semibold mb-2">Fast Turnaround</h4>
+              <p className="text-sm text-muted-foreground">
+                Standard formation in 5–10 business days. Expedited available in most states.
+              </p>
+            </Card>
+            <Card className="p-6 text-center">
+              <Users className="w-10 h-10 text-primary mx-auto mb-4" />
+              <h4 className="font-semibold mb-2">Human Support</h4>
+              <p className="text-sm text-muted-foreground">
+                A real person reviews your intake, advises on structure, and follows through to completion.
+              </p>
+            </Card>
+            <Card className="p-6 text-center">
+              <Shield className="w-10 h-10 text-primary mx-auto mb-4" />
+              <h4 className="font-semibold mb-2">Complete Package</h4>
+              <p className="text-sm text-muted-foreground">
+                Formation, EIN, registered agent, documents, banking intro, and AI tools — one price.
+              </p>
+            </Card>
+          </div>
+
+          {/* FAQ */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {faqs.map(({ q, a }) => (
+                <Card key={q} className="p-6">
+                  <h4 className="font-semibold mb-2">{q}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{a}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <Button size="lg" className="h-12 px-8 rounded-full" asChild>
+              <a href="mailto:contact@aerocooperation.com?subject=Start%20US%20Business%20Formation">
+                Start Your Formation Today
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
+            <p className="text-xs text-muted-foreground mt-4">
+              Questions? Email <a href="mailto:contact@aerocooperation.com" className="text-primary hover:underline">contact@aerocooperation.com</a> — we respond within 1 business day.
+            </p>
           </div>
         </div>
       </main>
