@@ -11,8 +11,8 @@ const positions = [
     id: "business-formation-advisor",
     title: "Business Formation Advisor",
     icon: Briefcase,
-    description: "Guide hobbyists and creators through every step of launching their US business",
-    details: "Join our formation team to lead clients from intake through completed LLC or C-Corp setup. Work directly with first-time business owners — freelancers, Etsy sellers, YouTubers, and international entrepreneurs — helping them navigate state filings, EIN applications, and compliance setup.",
+    description: "Guide clients through every step of launching their US business",
+    details: "Join our formation team to lead clients from intake through completed LLC or C-Corp setup. Work directly with first-time business owners — freelancers, independent consultants, international entrepreneurs, and anyone establishing their work as a proper business — helping them navigate state filings, EIN applications, and compliance setup.",
     responsibilities: [
       "Manage client formation engagements from intake to completion",
       "Advise on entity type selection (LLC vs C-Corp) and state choice",

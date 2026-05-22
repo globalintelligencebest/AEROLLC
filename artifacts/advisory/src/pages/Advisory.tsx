@@ -131,7 +131,7 @@ export default function Advisory() {
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             One package, one flat rate. From entity filing to banking guidance —
-            AERO covers the entire journey from hobbyist to registered US business owner.
+            AERO covers the entire journey from unregistered to properly established US business owner.
           </p>
         </div>
       </section>

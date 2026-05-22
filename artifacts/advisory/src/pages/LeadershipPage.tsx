@@ -12,7 +12,7 @@ const leaders = [
     name: "Sébastien Moreau",
     title: "Founder & Managing Director",
     background:
-      "Former international organizations specialist with 20+ years across cross-border compliance and institutional governance. Founded AERO to make US business formation accessible to creators, freelancers, and hobbyists worldwide — with proper legal structure and AI tools built in from the start.",
+      "Former international organizations specialist with 20+ years across cross-border compliance and institutional governance. Founded AERO to make US business formation accessible to independent workers and entrepreneurs worldwide — with proper legal structure and clear, transparent pricing.",
   },
   {
     initials: "AK",
@@ -68,7 +68,7 @@ export default function LeadershipPage() {
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               Our team combines deep expertise in US business law, international compliance,
-              and AI governance — purpose-built to serve hobbyists and creators becoming business owners.
+              and AI governance — purpose-built to serve independent workers and entrepreneurs establishing their businesses.
             </p>
           </div>
 
@@ -129,7 +129,7 @@ export default function LeadershipPage() {
                 <Target className="w-10 h-10 text-primary mb-4" />
                 <h4 className="text-xl font-semibold mb-3">Our Mission</h4>
                 <p className="text-muted-foreground">
-                  To remove every barrier between a person with a great idea or a growing hobby and
+                  To remove every barrier between a person doing real work and
                   a properly structured US business — by handling all the paperwork, compliance, and
                   legal setup at one transparent flat rate.
                 </p>
@@ -171,10 +171,10 @@ export default function LeadershipPage() {
           <div className="bg-primary/5 rounded-2xl p-8 md:p-12 mb-12">
             <h3 className="text-xl font-semibold mb-6">From the Founder</h3>
             <blockquote className="text-muted-foreground leading-relaxed mb-6 italic border-l-4 border-primary pl-6">
-              "I've watched too many talented people — makers, freelancers, and creators — leave money
-              on the table or expose themselves to personal liability because forming a business seemed
-              complicated and expensive. AERO exists to change that. You should be able to focus on your
-              craft while we handle the legal and compliance side — for one straightforward price."
+              "I've watched too many talented people leave money on the table or expose themselves to
+              personal liability because forming a business seemed complicated and expensive. AERO exists
+              to change that. Whether you're a freelancer, a consultant, or running an independent operation —
+              you deserve a proper business structure without the runaround."
             </blockquote>
             <p className="text-sm text-muted-foreground">— Sébastien Moreau, Founder & Managing Director, AERO Advisory</p>
           </div>

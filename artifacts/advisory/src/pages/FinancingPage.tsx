@@ -93,7 +93,7 @@ export default function FinancingPage() {
               Pricing
             </Badge>
             <h1 className="text-4xl md:text-5xl font-semibold mb-4 tracking-tight">
-              One Flat Rate. Everything Included.
+              One Flat Rate. No Surprises.
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               No hourly billing. No piecemeal add-ons. AERO bundles every step of US company
@@ -170,10 +170,10 @@ export default function FinancingPage() {
                   Why Founders Choose AERO
                 </h4>
                 <blockquote className="text-sm text-muted-foreground italic border-l-4 border-primary pl-4">
-                  "I'd been selling on Etsy for two years before realizing I should have a real
-                  business structure. AERO handled everything — I had my Wyoming LLC and EIN within a week."
+                  "I'd been doing client work for two years under my own name before realizing I needed
+                  a proper structure. AERO handled everything — I had my Wyoming LLC and EIN within a week."
                 </blockquote>
-                <p className="text-xs text-muted-foreground mt-3">— AERO client, craft seller turned LLC owner</p>
+                <p className="text-xs text-muted-foreground mt-3">— AERO client, independent consultant turned LLC owner</p>
               </Card>
 
               <Card className="p-6">

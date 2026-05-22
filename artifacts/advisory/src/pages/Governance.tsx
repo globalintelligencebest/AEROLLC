@@ -20,7 +20,7 @@ import { Link } from "wouter";
 const steps = [
   {
     step: "01",
-    title: "Tell us about your hobby or project",
+    title: "Tell us about your work",
     desc: "A short intake form — we learn what you do and what kind of US entity makes the most sense for you.",
   },
   {
@@ -88,11 +88,11 @@ export default function Governance() {
             One flat rate · Everything included
           </Badge>
           <h1 className="text-4xl md:text-6xl font-display mb-6 text-white leading-tight">
-            Turn Your Hobby Into a<br />
+            Your Work Deserves a<br />
             <span className="text-cyan-300">Registered US Business</span>
           </h1>
           <p className="text-lg md:text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto mb-10">
-            Whether you sell handmade goods, run a YouTube channel, freelance, or build software on the side —
+            Whether you freelance, consult, create, or run an independent operation —
             AERO gets you properly incorporated in the United States so you can operate, get paid, and grow.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -190,19 +190,19 @@ export default function Governance() {
       <section className="py-24 bg-slate-950">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-semibold mb-4 text-white">
-            Built for Hobbyists Becoming Business Owners
+            For Anyone Who Hasn't Made It Official Yet
           </h2>
           <p className="text-blue-300 mb-16 max-w-2xl mx-auto">
-            You don't need a law degree or an accountant on retainer. AERO is designed for people
-            turning their passion into income and needing a proper legal foundation to do it.
+            You don't need a law degree or an accountant on retainer. AERO is for people
+            whose work is real — and who are ready to give it the legal foundation it deserves.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: Star,
-                title: "Creators & Makers",
-                desc: "Etsy sellers, artists, crafters, and product makers who want to sell professionally and protect their personal assets.",
+                title: "Creators & Independent Sellers",
+                desc: "Artists, designers, and product makers who want to sell professionally and protect their personal assets.",
               },
               {
                 icon: Zap,

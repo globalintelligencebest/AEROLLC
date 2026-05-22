@@ -120,8 +120,8 @@ export default function Press() {
                 </div>
               </div>
               <p className="text-muted-foreground mb-6">
-                For interviews, feature articles, and expert commentary on US business formation for hobbyists,
-                freelancers, and international founders — reach our communications team directly.
+                For interviews, feature articles, and expert commentary on US business formation for
+                independent workers, freelancers, and international founders — reach our communications team directly.
               </p>
               <div className="flex items-center gap-2 text-primary">
                 <Mail className="w-4 h-4" />

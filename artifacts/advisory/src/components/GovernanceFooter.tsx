@@ -12,7 +12,7 @@ export function GovernanceFooter() {
           <div className="space-y-4">
             <img src={aeroLogoWhite} alt="AERO" className="h-10 mb-2" />
             <p className="text-sm text-white/70 leading-relaxed">
-              Helping hobbyists, creators, and freelancers launch their US business — with everything handled at one flat rate.
+              Helping people establish their work as a proper US business — with every step of formation handled at one flat rate.
             </p>
             <p className="text-xs text-white/50 leading-relaxed">
               AERO also offers specialist AI governance advisory as a separate service — for businesses navigating FTC guidelines, the EU AI Act, and emerging AI regulations.
@@ -42,20 +42,6 @@ export function GovernanceFooter() {
                 <Link href="/hiring" className="hover:text-white transition-colors" data-testid="link-gov-careers">
                   Careers
                 </Link>
-              </li>
-              <li className="pt-2">
-                <div className="text-xs text-white/40 mb-2">Trusted by founders from</div>
-                <div className="flex flex-wrap gap-2 text-xs text-white/50">
-                  {["Etsy", "Fiverr", "Upwork", "Shopify", "YouTube"].map((org) => (
-                    <span
-                      key={org}
-                      className="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-white/60 text-xs"
-                      data-testid={`badge-org-${org.replace(/\s+/g, '-').toLowerCase()}`}
-                    >
-                      {org}
-                    </span>
-                  ))}
-                </div>
               </li>
             </ul>
           </div>
