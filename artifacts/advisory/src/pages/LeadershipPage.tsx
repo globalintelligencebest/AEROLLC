@@ -6,37 +6,6 @@ import aeroLogoBlue from "@/assets/aero_logo_blue.png";
 import { Link } from "wouter";
 import { GovernanceFooter } from "@/components/GovernanceFooter";
 
-const leaders = [
-  {
-    initials: "SM",
-    name: "Sébastien Moreau",
-    title: "Founder & Managing Director",
-    background:
-      "Former international organizations specialist with 20+ years across cross-border compliance and institutional governance. Founded AERO to make US business formation accessible to independent workers and entrepreneurs worldwide — with proper legal structure and clear, transparent pricing.",
-  },
-  {
-    initials: "AK",
-    name: "Anika Kessler",
-    title: "Head of Regulatory Affairs",
-    background:
-      "Corporate attorney specializing in US entity formation and international business law. Has guided hundreds of non-US residents through LLC and C-Corp setup, EIN applications, and ongoing compliance — including clients from over 40 countries.",
-  },
-  {
-    initials: "JT",
-    name: "James Tran",
-    title: "Head of Compliance & Technology",
-    background:
-      "Business compliance and AI governance specialist with a background at leading global consultancies. Oversees AERO's AI advisory toolkit and ensures every client's business has the technology and compliance infrastructure to scale responsibly.",
-  },
-  {
-    initials: "LO",
-    name: "Layla O'Brien",
-    title: "Director of Client Experience",
-    background:
-      "Entrepreneurship educator and small business advocate. Formerly designed small business launch programs at Columbia University's Executive Education division. Ensures every AERO client — from first-time founders to seasoned creators — feels supported throughout the formation process.",
-  },
-];
-
 export default function LeadershipPage() {
   return (
     <div className="min-h-screen bg-white">
