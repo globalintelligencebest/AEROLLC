@@ -145,7 +145,7 @@ export default function LeadershipPage() {
               to change that. Whether you're a freelancer, a consultant, or running an independent operation —
               you deserve a proper business structure without the runaround."
             </blockquote>
-            <p className="text-sm text-muted-foreground">— Sébastien Moreau, Founder & Managing Director, AERO Advisory</p>
+            <p className="text-sm text-muted-foreground">— Sereena Karsou, Founder & Managing Director, AERO Advisory</p>
           </div>
 
           {/* Expertise Areas */}
