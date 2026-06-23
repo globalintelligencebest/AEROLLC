@@ -1,0 +1,6 @@
+{
+  "buildCommand": "pnpm run typecheck:libs && pnpm --filter @workspace/advisory run build",
+  "outputDirectory": "artifacts/advisory/dist/public",
+  "installCommand": "pnpm install",
+  "framework": "vite"
+}

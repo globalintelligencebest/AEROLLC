@@ -41,24 +41,6 @@ export default function LeadershipPage() {
             </p>
           </div>
 
-          {/* Leadership Team */}
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {leaders.map(({ initials, name, title, background }) => (
-              <Card key={name} className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-primary font-bold text-lg">{initials}</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg">{name}</h3>
-                    <p className="text-sm text-primary font-medium mb-2">{title}</p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{background}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-
           {/* Advisory Board */}
           <Card className="p-8 md:p-12 mb-12">
             <div className="text-center mb-8">
